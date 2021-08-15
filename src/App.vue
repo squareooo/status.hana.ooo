@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, onBeforeMount } from "@vue/composition-api"
 import AppBar from "@/components/AppBar.vue"
 
 export default defineComponent({
@@ -15,6 +15,16 @@ export default defineComponent({
 
   components: {
     AppBar,
+  },
+
+  setup(props, { root }) {
+    onBeforeMount(() => {
+      const dark = window.matchMedia("(prefers-color-scheme: dark)")
+      root.$vuetify.theme.dark = dark.matches
+      dark.addEventListener("change", () => {
+        root.$vuetify.theme.dark = dark.matches
+      })
+    })
   },
 })
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="white">
+  <v-app-bar app flat :color="$vuetify.theme.dark ? '#121212' : 'white'">
     <v-toolbar-title>Hana Status</v-toolbar-title>
 
     <v-spacer></v-spacer>

@@ -1,8 +1,8 @@
 <template>
   <v-main>
-    <!-- <v-parallax height="300" src="" /> -->
+    <!-- <v-parallax height="320" src="" /> -->
 
-    <v-container>
+    <v-container class="mb-16">
       <v-alert
         prominent
         dense
@@ -10,7 +10,7 @@
         :color="status[system.status].color"
         :icon="status[system.status].icon"
       >
-        <b v-if="!system.status">Some checks haven't completed yet</b>
+        <b v-if="system.status === 'None'">Some checks haven't completed yet</b>
         <b v-else-if="system.degraded">Some Systems Degraded</b>
         <b v-else-if="system.incident">Some Systems Incident</b>
         <b v-else>All Systems Operational</b>
@@ -19,13 +19,14 @@
       <v-card-title>
         Current status
         <v-spacer />
-        <span class="caption">
+        <span class="caption text-right">
           {{ new Date() }}
         </span>
       </v-card-title>
+
       <v-row>
         <v-col cols="12" sm="6" v-for="service in services" :key="service.name">
-          <v-card>
+          <v-card elevation="16">
             <v-list-item two-line>
               <v-list-item-avatar>
                 <v-avatar color="#7f00ff" size="40">
@@ -80,54 +81,60 @@ export default defineComponent({
   setup() {
     const state = reactive({
       system: {
-        status: "",
+        status: "None",
         degraded: false,
         incident: false,
+      },
+      status: {
+        Normal: { icon: "mdi-check-circle", color: "green" },
+        Degraded: { icon: "mdi-alert-circle", color: "orange" },
+        Incident: { icon: "mdi-alert-circle", color: "red" },
+        None: { icon: "mdi-checkbox-blank-circle-outline", color: "grey" },
       },
       services: [
         {
           icon: "mdi-home-roof",
           title: "Main",
-          status: "",
+          status: "None",
           desc: "",
           url: "https://hana.run/.well-known/apollo/server-health",
         },
         {
           icon: "mdi-cube",
           title: "Auth",
-          status: "",
+          status: "None",
           desc: "",
           url: "https://auth.hana.run/.well-known/apollo/server-health",
         },
         {
           icon: "mdi-school",
           title: "School",
-          status: "",
+          status: "None",
           desc: "",
           url: "https://school.hana.run/.well-known/apollo/server-health",
         },
       ],
-      status: {
-        Normal: { icon: "mdi-check-circle", color: "green" },
-        Degraded: { icon: "mdi-alert-circle", color: "orange" },
-        Incident: { icon: "mdi-alert-circle", color: "red" },
-        "": { icon: "mdi-checkbox-blank-circle-outline", color: "grey" },
-      },
     })
 
+    const getStatus = async (e: {
+      url: string
+      status: string
+      desc: string
+    }) => {
+      await axios
+        .get(e.url)
+        .then(() => {
+          e.status = "Normal"
+        })
+        .catch((err) => {
+          state.system.degraded = true
+          e.status = "Degraded"
+          e.desc = err
+        })
+    }
+
     onBeforeMount(async () => {
-      for (const e of state.services) {
-        await axios
-          .get(e.url)
-          .then(() => {
-            e.status = "Normal"
-          })
-          .catch((err) => {
-            state.system.degraded = true
-            e.status = "Degraded"
-            e.desc = err
-          })
-      }
+      await Promise.all(state.services.map((e) => getStatus(e)))
 
       state.system.status = state.system.incident
         ? "Incident"
