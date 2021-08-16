@@ -1,4 +1,4 @@
-# status.hana.icu
+# status.hana.ooo
 
 ## Project setup
 ```
