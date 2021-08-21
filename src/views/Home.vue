@@ -141,6 +141,9 @@ export default defineComponent({
         : state.system.degraded
         ? "Degraded"
         : "Normal"
+
+      const favicon = document.getElementById("favicon") as HTMLElement
+      favicon.setAttribute("href", state.system.status + ".ico")
     })
 
     return {
