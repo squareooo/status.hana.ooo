@@ -113,6 +113,13 @@ export default defineComponent({
           desc: "",
           url: "https://xschool.hana.ooo/.well-known/apollo/server-health",
         },
+        {
+          icon: "mdi-link-variant",
+          title: "Uri",
+          status: "None",
+          desc: "",
+          url: "https://xuri.hana.ooo/.well-known/apollo/server-health",
+        },
       ],
     })
 
