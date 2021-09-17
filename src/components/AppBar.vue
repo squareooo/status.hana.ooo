@@ -40,12 +40,20 @@
               <span>Hana 계정</span>
             </v-tooltip>
           </v-col>
-          <v-col cols="4" class="pa-2" v-for="n in 0" :key="n">
+          <v-col cols="4" class="pa-2" v-for="item in items" :key="item">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
-                <v-sheet width="48" height="48" v-bind="attrs" v-on="on" />
+                <v-avatar
+                  color="deep-purple accent-2"
+                  class="white--text headline"
+                  v-bind="attrs"
+                  v-on="on"
+                  @click="to(item.to)"
+                >
+                  <v-icon>{{ item.icon }}</v-icon>
+                </v-avatar>
               </template>
-              <span></span>
+              <span>{{ item.name }}</span>
             </v-tooltip>
           </v-col>
         </v-row>
@@ -63,6 +71,14 @@ export default defineComponent({
   setup() {
     const state = reactive({
       menu: false,
+      items: [
+        {
+          name: "단축 URI",
+          icon: "mdi-link-variant",
+          color: "deep-purple accent-2",
+          to: "https://uri.hana.ooo",
+        },
+      ],
     })
 
     const to = (url: string) => {
