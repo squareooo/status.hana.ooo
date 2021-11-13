@@ -45,12 +45,11 @@
               <template v-slot:activator="{ on, attrs }">
                 <v-avatar
                   color="deep-purple accent-2"
-                  class="white--text headline"
                   v-bind="attrs"
                   v-on="on"
                   @click="to(item.to)"
                 >
-                  <v-icon>{{ item.icon }}</v-icon>
+                  <v-icon dark>{{ item.icon }}</v-icon>
                 </v-avatar>
               </template>
               <span>{{ item.name }}</span>
@@ -72,6 +71,12 @@ export default defineComponent({
     const state = reactive({
       menu: false,
       items: [
+        {
+          name: "Dev",
+          icon: "mdi-hammer-wrench",
+          color: "deep-purple accent-2",
+          to: "https://dev.hana.ooo",
+        },
         {
           name: "단축 URI",
           icon: "mdi-link-variant",

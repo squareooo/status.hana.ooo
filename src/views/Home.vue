@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <!-- <v-parallax height="320" src="" /> -->
+    <v-parallax height="300" src="" alt="" style="background: #7f00ff" />
 
     <v-container class="mb-16">
       <v-alert
@@ -107,18 +107,25 @@ export default defineComponent({
           url: "https://xauth.hana.ooo/.well-known/apollo/server-health",
         },
         {
+          icon: "mdi-hammer-wrench",
+          title: "Dev",
+          status: "None",
+          desc: "",
+          url: "https://xdev.hana.ooo/.well-known/apollo/server-health",
+        },
+        {
+          icon: "mdi-link-variant",
+          title: "URI",
+          status: "None",
+          desc: "",
+          url: "https://xuri.hana.ooo/.well-known/apollo/server-health",
+        },
+        {
           icon: "mdi-school",
           title: "School",
           status: "None",
           desc: "",
           url: "https://xschool.hana.ooo/.well-known/apollo/server-health",
-        },
-        {
-          icon: "mdi-link-variant",
-          title: "Uri",
-          status: "None",
-          desc: "",
-          url: "https://xuri.hana.ooo/.well-known/apollo/server-health",
         },
       ],
     })
@@ -128,16 +135,15 @@ export default defineComponent({
       status: string
       desc: string
     }) => {
-      await axios
-        .get(e.url)
-        .then(() => {
-          e.status = "Normal"
-        })
-        .catch((err) => {
-          state.system.degraded = true
-          e.status = "Degraded"
-          e.desc = err
-        })
+      try {
+        await axios.get(e.url)
+
+        e.status = "Normal"
+      } catch (err) {
+        state.system.degraded = true
+        e.status = "Degraded"
+        e.desc = err
+      }
     }
 
     onBeforeMount(async () => {
