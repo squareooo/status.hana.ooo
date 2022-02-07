@@ -127,6 +127,13 @@ export default defineComponent({
           desc: "",
           url: "https://xschool.hana.ooo/.well-known/apollo/server-health",
         },
+        {
+          icon: "mdi-sd",
+          title: "Archive",
+          status: "None",
+          desc: "",
+          url: "https://archive.hana.ooo/.well-known/server-health",
+        },
       ],
     })
 
