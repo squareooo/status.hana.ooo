@@ -1,0 +1,17 @@
+extend type Mutation {
+  "시험 생성"
+  createTest(input: CreateTestInput!): CreateTest!
+}
+
+input CreateTestInput {
+  name: String!
+  published: Boolean
+  publishedAt: DateTime
+}
+
+type CreateTest {
+  id: ID!
+  userId: ID!
+  name: String!
+  publishedAt: DateTime
+}

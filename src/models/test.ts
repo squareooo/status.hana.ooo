@@ -10,6 +10,7 @@ interface Test extends Document {
   id: string | Binary
   userId: string | Binary
   name: string
+  publishedAt?: Date
 }
 
 const TestModel = new Schema(
@@ -27,6 +28,9 @@ const TestModel = new Schema(
     name: {
       type: String,
       required: true
+    },
+    publishedAt: {
+      type: Date
     }
   },
   {
