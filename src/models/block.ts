@@ -6,19 +6,24 @@ import createConnection from '@/lib/createConnection'
 
 const test = createConnection('test')
 
-interface Question extends Document {
+interface Block extends Document {
   id: string | Binary
+  testId: string | Binary
   userId: string | Binary
   markdown: string
 }
 
-const QuestionModel = new Schema(
+const BlockModel = new Schema(
   {
     id: {
       type: Object,
       default: MUUID.v4,
       required: true,
       unique: true
+    },
+    testId: {
+      type: Object,
+      required: true
     },
     userId: {
       type: Object,
@@ -35,4 +40,4 @@ const QuestionModel = new Schema(
   }
 )
 
-export default test.model<Question>('question', QuestionModel)
+export default test.model<Block>('block', BlockModel)
