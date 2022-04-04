@@ -1,5 +1,6 @@
 query test($input: TestInput!) {
   test(input: $input) {
     id
+    name
   }
 }
