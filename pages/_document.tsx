@@ -1,5 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript } from "next/document"
-import { getCssText } from "../lib/stitches.config"
+import { getCssText } from "@/lib/stitches.config"
 
 class Document extends NextDocument {
   render() {
