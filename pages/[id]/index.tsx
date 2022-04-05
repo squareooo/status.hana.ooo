@@ -6,6 +6,7 @@ import {
   TestQueryResult,
   TestQuery
 } from '@/lib/queries/test.graphql'
+import Test from '@/components/templates/Test'
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
@@ -31,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 }
 
 const Id = (({ data }: { data: TestQuery }) => {
-  return <div>{data.test.name}</div>
+  return <Test data={data} />
 }) as NextPage
 
 export default Id
