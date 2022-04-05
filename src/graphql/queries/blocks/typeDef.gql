@@ -4,6 +4,8 @@ extend type Query {
 }
 
 input BlocksInput {
+  "Test 고유 식별자"
+  testId: ID
   after: ID
   before: ID
   first: Int

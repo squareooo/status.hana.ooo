@@ -1,8 +1,19 @@
 import { Types } from 'mongoose'
+import MUUID from 'uuid-mongodb'
 
 import Block from '@/models/block'
 
 export const blocks = async (_: any, { input }: any): Promise<any> => {
+  const testId = input.testId?.replace(
+    /(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})/,
+    '$1-$2-$3-$4-$5'
+  )
+
+  const aggregates: any = []
+  if (testId != null) {
+    aggregates.push({ $match: { testId: MUUID.from(testId) } })
+  }
+
   const edges: any = []
   if (input.after != null) {
     edges.push({ $match: { _id: { $lt: new Types.ObjectId(input.after) } } })
@@ -25,6 +36,7 @@ export const blocks = async (_: any, { input }: any): Promise<any> => {
 
   const blocks = await Block.aggregate(
     [
+      ...aggregates,
       {
         $facet: {
           totalCount: [{ $count: 'count' }],
