@@ -12,6 +12,9 @@ export const test = async (
   )
 
   const test = await Test.findOne({ id: MUUID.from(id) })
+  if (test == null) return
+
+  test.id = MUUID.from(test.id).toString('N')
 
   return test
 }

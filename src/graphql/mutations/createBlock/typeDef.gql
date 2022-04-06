@@ -5,6 +5,7 @@ extend type Mutation {
 
 input CreateBlockInput {
   testId: ID!
+  index: Int!
   markdown: String!
 }
 
@@ -12,5 +13,6 @@ type CreateBlock {
   id: ID!
   testId: ID!
   userId: ID!
+  index: Int!
   markdown: String!
 }

@@ -16,6 +16,7 @@ type Block {
   id: ID!
   testId: ID!
   userId: ID!
+  index: Int!
   markdown: String!
 }
 
@@ -33,6 +34,6 @@ type PageInfo {
 
 type Blocks {
   totalCount: Int
-  edges: [BlockEdge]
+  edges: [BlockEdge!]
   pageInfo: PageInfo!
 }

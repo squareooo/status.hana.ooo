@@ -10,6 +10,7 @@ interface Block extends Document {
   id: string | Binary
   testId: string | Binary
   userId: string | Binary
+  index: number
   markdown: string
 }
 
@@ -27,6 +28,10 @@ const BlockModel = new Schema(
     },
     userId: {
       type: Object,
+      required: true
+    },
+    index: {
+      type: Number,
       required: true
     },
     markdown: {
