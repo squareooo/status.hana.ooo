@@ -7,8 +7,7 @@ const StyledContainer = styled('main', {
   width: '1024px',
   margin: '0 auto',
   '@media (max-width: 1024px)': {
-    width: '100%',
-    padding: '0 1rem'
+    width: '100%'
   }
 })
 

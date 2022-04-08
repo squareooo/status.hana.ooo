@@ -16,6 +16,7 @@ import checkbox from '@/lib/unified/checkbox'
 import { TestQuery } from "@/lib/queries/test.graphql"
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
 import Container from '@/components/atoms/Container'
+import Block from '@/components/atoms/Block'
 
 interface Props {
   data: TestQuery;
@@ -90,11 +91,12 @@ const Post: NextPage<Props> = ({ data }) => {
           if (!block) return <div>Loading...</div>;
 
           return (
-            <div
-              style={{ backgroundColor: block.node.mark === true ? "lightgreen" : block.node.mark === false ? "orange" : "white" }}
+            <Block
+              mark={block.node.mark}
               key={block.node.id}
-              dangerouslySetInnerHTML={{ __html: html(block.node) }}
-            />
+            >
+              <div dangerouslySetInnerHTML={{ __html: html(block.node) }} />
+            </Block>
           );
         })}
 
@@ -105,27 +107,35 @@ const Post: NextPage<Props> = ({ data }) => {
         blockquote {
           border-left: 0.25rem solid black;
           padding: 0 0.5rem;
-          margin: 0;
+          margin: 0.5rem 0;
         }
 
         u {
           text-underline-offset: 0.125rem;
         }
 
+        ol, ul {
+          margin: 0 1.5rem;
+        }
+
         .box {
           border: 1px solid black;
+          margin: 0.5rem 0;
         }
 
         .box > p {
-          padding: 0 0.5rem;
+          margin: 0.5rem;
         }
 
         .box > .directiveLabel {
           display: inline-block;
           padding: 0.25rem 0.5rem;
-          margin: 0;
           background: black;
           color: white;
+        }
+
+        .box .box {
+          margin: 0.5rem;
         }
       `}</style>
     </>
