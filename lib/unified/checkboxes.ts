@@ -1,18 +1,32 @@
 import { u } from 'unist-builder'
 import { visit } from 'unist-util-visit'
 
-const checkboxes = () => {
+const checkboxes = (id: string) => {
   return (tree: any) => {
-    visit(tree, u('element', { tagName: "input" }), (node) => {
-      node.properties.and = node.properties.checked
-      node.properties.disabled = false
-      node.properties.checked = false
+    visit(tree, u('element', { tagName: "li" }), (node) => {
+      visit(node, u('element', { tagName: "input" }), (node) => {
+        node.properties.disabled = false
+        node.properties.checked = false
+        node.properties.class = id
+        node.properties.onClick = "this.defaultChecked = !this.defaultChecked"
+      })
+
+      if (node.children[0].tagName !== "input") return
+      node.children = [u('element', { tagName: "label", children: node.children })]
     })
 
-    visit(tree, u('element', { tagName: "li" }), (node) => {
-      if (node.children[0].tagName !== "input") return console.log(1)
+    visit(tree, u('element', { tagName: "ul" }), (node) => {
+      visit(node, u('element', { tagName: "li" }), (node) => {
+        visit(node, u('element', { tagName: "input" }), (node) => {
+          node.properties.type = "text"
+          node.properties.onClick = null
+        })
 
-      node.children = [u('element', { tagName: "label", children: node.children })]
+        visit(node, u('element', { tagName: "label" }), (node) => {
+          if (node.children[0].tagName !== "input") return
+          node.children[1].value = ""
+        })
+      })
     })
   }
 }

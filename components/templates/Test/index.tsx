@@ -9,8 +9,9 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 
+import answers from "@/lib/unified/answers"
 import checkboxes from '@/lib/unified/checkboxes'
-import { TestQuery } from "@/lib/queries/test.graphql";
+import { TestQuery } from "@/lib/queries/test.graphql"
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
 import Container from '@/components/atoms/Container'
 
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const Post: NextPage<Props> = ({ data }) => {
-  const [blocks, setBlocks] = useState<any>();
+  const [blocks, setBlocks] = useState<any>([]);
   
   const { data: blocksData } = useBlocksQuery({
     variables: {
@@ -36,7 +37,7 @@ const Post: NextPage<Props> = ({ data }) => {
     setBlocks(edges)
   }, [blocksData])
 
-  const html = (text: string) => {
+  const html = (node: any) => {
     return unified()
       .use(remarkParse)
       .use(remarkBreaks)
@@ -44,10 +45,29 @@ const Post: NextPage<Props> = ({ data }) => {
       .use(remarkGfm)
       .use(rehypeRaw)
       .use(rehypeStringify)
-      .use(checkboxes)
-      .processSync(text)
+      .use(checkboxes, node.id)
+      .processSync(node.markdown)
       .toString();
-  };
+  }
+
+  const mark = () => {
+    const markBlocks = JSON.parse(JSON.stringify(blocks))
+    markBlocks.map((block: any) => {
+      const tree = unified()
+        .use(remarkParse)
+        .parse(block.node.markdown)
+      const mark = answers(tree)
+      if (mark[0] == null) return
+
+      block.node.mark = true
+      const inputs = document.querySelectorAll(`input[class="${block.node.id}"]`)
+      inputs.forEach((input: any, index) => {
+        if (mark[index] === 1 && input.defaultChecked === false) return block.node.mark = false
+        else if (mark[index] === 0 && input.defaultChecked === true) return block.node.mark = false
+      })
+    })
+    setBlocks(markBlocks)
+  }
 
   return (
     <>
@@ -67,11 +87,14 @@ const Post: NextPage<Props> = ({ data }) => {
 
           return (
             <div
-              key={block.cursor}
-              dangerouslySetInnerHTML={{ __html: html(block.node.markdown) }}
+              style={{ backgroundColor: block.node.mark === true ? "lightgreen" : block.node.mark === false ? "orange" : "white" }}
+              key={block.node.id}
+              dangerouslySetInnerHTML={{ __html: html(block.node) }}
             />
           );
         })}
+
+        <button onClick={mark}>mark</button>
       </Container>
     </>
   );
