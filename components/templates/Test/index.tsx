@@ -6,11 +6,13 @@ import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";
 import remarkRehype from "remark-rehype";
 import remarkGfm from "remark-gfm";
+import remarkDirective from "remark-directive";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 
 import answers from "@/lib/unified/answers"
-import checkboxes from '@/lib/unified/checkboxes'
+import box from "@/lib/unified/box"
+import checkbox from '@/lib/unified/checkbox'
 import { TestQuery } from "@/lib/queries/test.graphql"
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
 import Container from '@/components/atoms/Container'
@@ -41,11 +43,13 @@ const Post: NextPage<Props> = ({ data }) => {
     return unified()
       .use(remarkParse)
       .use(remarkBreaks)
-      .use(remarkRehype, { allowDangerousHtml: true })
       .use(remarkGfm)
+      .use(remarkDirective)
+      .use(box)
+      .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeRaw)
       .use(rehypeStringify)
-      .use(checkboxes, node.id)
+      .use(checkbox, node.id)
       .processSync(node.markdown)
       .toString();
   }
@@ -96,6 +100,34 @@ const Post: NextPage<Props> = ({ data }) => {
 
         <button onClick={mark}>mark</button>
       </Container>
+
+      <style jsx global>{`
+        blockquote {
+          border-left: 0.25rem solid black;
+          padding: 0 0.5rem;
+          margin: 0;
+        }
+
+        u {
+          text-underline-offset: 0.125rem;
+        }
+
+        .box {
+          border: 1px solid black;
+        }
+
+        .box > p {
+          padding: 0 0.5rem;
+        }
+
+        .box > .directiveLabel {
+          display: inline-block;
+          padding: 0.25rem 0.5rem;
+          margin: 0;
+          background: black;
+          color: white;
+        }
+      `}</style>
     </>
   );
 };
