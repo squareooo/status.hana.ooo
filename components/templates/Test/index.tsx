@@ -5,9 +5,11 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";
 import remarkRehype from "remark-rehype";
+import remarkMath from 'remark-math';
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import rehypeRaw from "rehype-raw";
+import rehypeKatex from 'rehype-katex';
 import rehypeStringify from "rehype-stringify";
 
 import answers from "@/lib/unified/answers"
@@ -48,7 +50,9 @@ const Post: NextPage<Props> = ({ data }) => {
       .use(remarkDirective)
       .use(box)
       .use(remarkRehype, { allowDangerousHtml: true })
+      .use(remarkMath)
       .use(rehypeRaw)
+      .use(rehypeKatex)
       .use(rehypeStringify)
       .use(checkbox, node.id)
       .processSync(node.markdown)
@@ -82,6 +86,10 @@ const Post: NextPage<Props> = ({ data }) => {
         <meta property="og:title" content={data.test.name} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.test.name} />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+        ></link>
       </Head>
 
       <Container>
@@ -136,6 +144,11 @@ const Post: NextPage<Props> = ({ data }) => {
 
         .box .box {
           margin: 0.5rem;
+        }
+
+        span.box {
+          margin: 0 !important;
+          padding: 0 0.5rem;
         }
       `}</style>
     </>
