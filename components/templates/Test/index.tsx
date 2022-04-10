@@ -86,10 +86,6 @@ const Post: NextPage<Props> = ({ data }) => {
         <meta property="og:title" content={data.test.name} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.test.name} />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
-        ></link>
       </Head>
 
       <Container>
