@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import 'katex/dist/katex.min.css'
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";

@@ -10,10 +10,6 @@ class Document extends NextDocument {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
-          ></link>
         </Head>
 
         <body>
