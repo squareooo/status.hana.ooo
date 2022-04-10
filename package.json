@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@stitches/react": "^1.2.7",
+    "cookie-storage": "^6.1.0",
     "hastscript": "^7.0.2",
     "next": "12.1.0",
     "react": "17.0.2",
