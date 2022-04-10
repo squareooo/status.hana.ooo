@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import type { NextPage } from 'next'
+import { useEffect, useState } from 'react'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { styled } from '@/lib/stitches.config'
 import 'katex/dist/katex.min.css'
 import { unified } from "unified"
 import remarkParse from "remark-parse"
@@ -14,7 +13,12 @@ import rehypeRaw from "rehype-raw"
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from "rehype-stringify"
 
+import { initializeApollo } from '@/lib/apollo'
+import { styled } from '@/lib/stitches.config'
+import { TestDocument, TestQueryResult } from '@/lib/queries/test.graphql'
+import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
 import Button from '@/components/atoms/Button'
+import Block from '@/components/atoms/Block'
 
 const StyledContainer = styled('div', {
   minHeight: '100%',
@@ -76,7 +80,27 @@ const StyledAction = styled('div', {
   justifyContent: 'right'
 })
 
-const html = (text: string) => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  try {
+    const apolloClient = initializeApollo()
+    const { data } = (await apolloClient.query({
+      query: TestDocument,
+      variables: {
+        input: {
+          id: query.id
+        }
+      }
+    })) as TestQueryResult
+
+    return {
+      props: { data, query }
+    }
+  } catch {
+    return { notFound: true }
+  }
+}
+
+const html = (node: any) => {
   return unified()
     .use(remarkParse)
     .use(remarkBreaks)
@@ -87,28 +111,39 @@ const html = (text: string) => {
     .use(rehypeRaw)
     .use(rehypeKatex)
     .use(rehypeStringify)
-    .processSync(text)
+    .processSync(node.markdown)
     .toString();
 }
 
-export default (() => {
-  const [title, setTitle] = useState("")
-  const [text, setText] = useState("")
-  const [blocks, setBlocks] = useState<any>({})
+const Draft: NextPage = ({ data, query }: any) => {
+  const [title, setTitle] = useState(data.test.name)
+  const [blocks, setBlocks] = useState<any>([])
+
+  const { data: blocksData } = useBlocksQuery({
+    variables: {
+      input: {
+        testId: query.id as string,
+      },
+    },
+  })
+
+  useEffect(() => {
+    if (blocksData == null || blocksData.blocks.edges == null) return
+    const edges = [...blocksData.blocks.edges]
+    edges.sort((a, b) => a.node.index - b.node.index)
+    setBlocks(edges)
+  }, [blocksData])
 
   const handleTitleChange = (e: any) => {
     setTitle(e.target.value as string)
   }
 
   const handleTextChange = (e: any, id: string) => {
-    blocks[id] = e.target.value
-    setBlocks(blocks)
-
-    let text = ""
-    for (const id in blocks) {
-      text += '\n\n' + blocks[id]
+    const markdownBlocks = JSON.parse(JSON.stringify(blocks))
+    for (const block of markdownBlocks) {
+      if (block.node.id === id) block.node.markdown = e.target.value
     }
-    setText(html(text))
+    setBlocks(markdownBlocks)
   }
 
   return (
@@ -125,9 +160,20 @@ export default (() => {
             value={title}
           />
 
-          <StyledPreview
-            dangerouslySetInnerHTML={{ __html: text }}
-          />
+          <StyledPreview>
+            {blocks?.map((block: any) => {
+              if (!block) return <div>Loading...</div>;
+
+              return (
+                <Block
+                  mark={block.node.mark}
+                  key={block.cursor}
+                >
+                  <div dangerouslySetInnerHTML={{ __html: html(block.node) }} />
+                </Block>
+              );
+            })}
+          </StyledPreview>
         </StyledBox>
 
         <StyledRightBox>
@@ -138,14 +184,14 @@ export default (() => {
             onChange={handleTitleChange}
           />
 
-          {Object.keys(blocks)?.map((id: string) => {
+          {blocks?.map(({node}: any) => {
             return (
               <StyledTextarea
                 placeholder="Text"
                 spellCheck="false"
-                defaultValue={blocks[id]}
-                key={id}
-                onChange={(e) => handleTextChange(e, id)}
+                defaultValue={node.markdown}
+                key={node.id}
+                onChange={(e) => handleTextChange(e, node.id)}
               />
             );
           })}
@@ -157,4 +203,6 @@ export default (() => {
       </StyledContainer>
     </>
   )
-}) as NextPage
+}
+
+export default Draft
