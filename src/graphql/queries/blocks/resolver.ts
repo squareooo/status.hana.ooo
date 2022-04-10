@@ -88,5 +88,9 @@ export const blocks = async (_: any, { input }: any): Promise<any> => {
     }
   )
 
+  blocks[0].edges.forEach((test: any) => {
+    test.node.id = MUUID.from(test.node.id).toString('N')
+  })
+
   return blocks.shift()
 }

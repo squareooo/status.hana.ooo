@@ -1,4 +1,5 @@
 import { Types } from 'mongoose'
+import MUUID from 'uuid-mongodb'
 
 import Test from '@/models/test'
 
@@ -75,6 +76,10 @@ export const tests = async (_: any, { input }: any): Promise<any> => {
       allowDiskUse: true
     }
   )
+
+  tests[0].edges.forEach((test: any) => {
+    test.node.id = MUUID.from(test.node.id).toString('N')
+  })
 
   return tests.shift()
 }
