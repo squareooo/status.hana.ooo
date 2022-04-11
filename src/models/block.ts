@@ -35,8 +35,7 @@ const BlockModel = new Schema(
       required: true
     },
     markdown: {
-      type: String,
-      required: true
+      type: String
     }
   },
   {
