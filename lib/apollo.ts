@@ -1,12 +1,30 @@
 import { useMemo } from 'react'
 import {
+  from,
   HttpLink,
   ApolloClient,
   InMemoryCache,
   NormalizedCacheObject
 } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
+
+import { cookieStorage } from '@/lib/cookieStorage'
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
+
+const authLink = setContext((_, { headers }) => {
+  let accessToken = ''
+  if (typeof window !== 'undefined') {
+    accessToken = cookieStorage.getItem('access_token')
+  }
+
+  return {
+    headers: {
+      ...headers,
+      authorization: accessToken ? `Bearer ${accessToken}` : ''
+    }
+  }
+})
 
 function createIsomorphLink () {
   return new HttpLink({
@@ -18,7 +36,7 @@ function createIsomorphLink () {
 function createApolloClient () {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
-    link: createIsomorphLink(),
+    link: from([authLink, createIsomorphLink()]),
     cache: new InMemoryCache({
       addTypename: false
     })
