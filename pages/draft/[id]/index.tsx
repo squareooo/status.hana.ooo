@@ -18,6 +18,7 @@ import { initializeApollo } from '@/lib/apollo'
 import { styled } from '@/lib/stitches.config'
 import { TestDocument, TestQueryResult } from '@/lib/queries/test.graphql'
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
+import { useCreateBlockMutation } from '@/lib/mutations/createBlock.graphql'
 import { useUpdateBlockMutation } from '@/lib/mutations/updateBlock.graphql'
 import Button from '@/components/atoms/Button'
 import Block from '@/components/atoms/Block'
@@ -118,6 +119,7 @@ const html = (node: any) => {
 }
 
 const Draft: NextPage = ({ data, query }: any) => {
+  const [createBlockMutation] = useCreateBlockMutation()
   const [updateBlockMutation] = useUpdateBlockMutation()
   const [title, setTitle] = useState(data.test.name)
   const [blocks, setBlocks] = useState<any>([])
@@ -155,6 +157,21 @@ const Draft: NextPage = ({ data, query }: any) => {
       if (block.node.id === id) block.node.markdown = e.target.value
     }
     setBlocks(markdownBlocks)
+  }
+
+  const addBlock = async () => {
+    const { data } = await createBlockMutation({
+      variables: {
+        input: {
+          testId: query.id,
+          index: blocks.length ? blocks[blocks.length - 1].node.index + 1 : 0,
+          markdown: ""
+        }
+      }
+    })
+    setBlocks([...blocks, {
+      node: data?.createBlock
+    }])
   }
 
   return (
@@ -208,7 +225,7 @@ const Draft: NextPage = ({ data, query }: any) => {
           })}
 
           <StyledAction>
-            <Button onClick={() => setBlocks({ ...blocks, 1: "", 2: "" })}>블록 추가</Button>
+            <Button onClick={addBlock}>블록 추가</Button>
           </StyledAction>
         </StyledRightBox>
       </StyledContainer>

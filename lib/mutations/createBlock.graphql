@@ -1,0 +1,9 @@
+mutation createBlock($input: CreateBlockInput!) {
+  createBlock(input: $input) {
+    id
+    testId
+    userId
+    index
+    markdown
+  }
+}
