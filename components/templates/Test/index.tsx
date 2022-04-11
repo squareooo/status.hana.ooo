@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import 'katex/dist/katex.min.css'
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";
@@ -12,6 +11,7 @@ import remarkDirective from "remark-directive";
 import rehypeRaw from "rehype-raw";
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from "rehype-stringify";
+import 'katex/dist/katex.min.css'
 
 import answers from "@/lib/unified/answers"
 import box from "@/lib/unified/box"

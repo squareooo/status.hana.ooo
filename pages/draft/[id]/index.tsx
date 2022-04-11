@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import 'katex/dist/katex.min.css'
 import { unified } from "unified"
 import remarkParse from "remark-parse"
 import remarkBreaks from "remark-breaks"
@@ -12,12 +11,14 @@ import remarkDirective from "remark-directive"
 import rehypeRaw from "rehype-raw"
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from "rehype-stringify"
+import 'katex/dist/katex.min.css'
 
 import box from "@/lib/unified/box"
 import { initializeApollo } from '@/lib/apollo'
 import { styled } from '@/lib/stitches.config'
 import { TestDocument, TestQueryResult } from '@/lib/queries/test.graphql'
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
+import { useUpdateBlockMutation } from '@/lib/mutations/updateBlock.graphql'
 import Button from '@/components/atoms/Button'
 import Block from '@/components/atoms/Block'
 
@@ -56,7 +57,7 @@ const StyledPreview = styled('div', {
   fontSize: '1rem',
   padding: '0 2rem 2rem 2rem',
   wordWrap: 'break-word',
-  '& *': {
+  '& img': {
     maxWidth: '100%'
   }
 })
@@ -117,6 +118,7 @@ const html = (node: any) => {
 }
 
 const Draft: NextPage = ({ data, query }: any) => {
+  const [updateBlockMutation] = useUpdateBlockMutation()
   const [title, setTitle] = useState(data.test.name)
   const [blocks, setBlocks] = useState<any>([])
 
@@ -141,6 +143,14 @@ const Draft: NextPage = ({ data, query }: any) => {
 
   const handleTextChange = (e: any, id: string) => {
     const markdownBlocks = JSON.parse(JSON.stringify(blocks))
+    updateBlockMutation({
+      variables: {
+        input: {
+          id: id,
+          markdown: e.target.value,
+        }
+      }
+    })
     for (const block of markdownBlocks) {
       if (block.node.id === id) block.node.markdown = e.target.value
     }
@@ -168,7 +178,7 @@ const Draft: NextPage = ({ data, query }: any) => {
               return (
                 <Block
                   mark={block.node.mark}
-                  key={block.cursor}
+                  key={block.node.id}
                 >
                   <div dangerouslySetInnerHTML={{ __html: html(block.node) }} />
                 </Block>
