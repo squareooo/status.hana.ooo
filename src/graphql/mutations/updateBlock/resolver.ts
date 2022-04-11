@@ -9,7 +9,7 @@ export const updateBlock = async (
   { payload }: any
 ): Promise<any> => {
   try {
-    // if (payload == null) return new AuthenticationError('')
+    if (payload == null) return new AuthenticationError('')
 
     const id = args.input.id.replace(
       /(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})/,

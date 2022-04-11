@@ -1,0 +1,25 @@
+extend type Mutation {
+  "파일 기록 생성"
+  createPresignedPost(input: CreatePresignedPostInput!): CreatePresignedPost!
+}
+
+input CreatePresignedPostInput {
+  blockId: ID!
+  fileName: String!
+}
+
+type PresignedPostFields {
+  ContentType: String
+  bucket: String!
+  XAmzAlgorithm: String!
+  XAmzCredential: String!
+  XAmzDate: String!
+  key: String!
+  Policy: String!
+  XAmzSignature: String!
+}
+
+type CreatePresignedPost {
+  url: String!
+  fields: PresignedPostFields!
+}
