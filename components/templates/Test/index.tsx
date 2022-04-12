@@ -53,7 +53,7 @@ const Post: NextPage<Props> = ({ data }) => {
       .use(remarkRehype, { allowDangerousHtml: true })
       .use(remarkMath)
       .use(rehypeRaw)
-      .use(rehypeKatex)
+      .use(rehypeKatex, { fleqn: true })
       .use(rehypeStringify)
       .use(checkbox, node.id)
       .processSync(node.markdown)

@@ -37,14 +37,6 @@ const StyledBox = styled('div', {
   overflowY: 'auto'
 })
 
-const StyledRightBox = styled('div', {
-  width: '50%',
-  display: 'flex',
-  flex: '1 1',
-  flexDirection: 'column',
-  overflowY: 'auto'
-})
-
 const StyledTitle = styled('input', {
   border: 'none',
   outline: 'none',
@@ -71,7 +63,7 @@ const StyledTextarea = styled('textarea', {
   fontSize: '1rem',
   padding: '1rem',
   margin: '0.5rem 1rem',
-  background: 'none'
+  background: 'white'
 })
 
 const StyledAction = styled('div', {
@@ -112,7 +104,7 @@ const html = (node: any) => {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(remarkMath)
     .use(rehypeRaw)
-    .use(rehypeKatex)
+    .use(rehypeKatex, { fleqn: true })
     .use(rehypeStringify)
     .processSync(node.markdown)
     .toString();
@@ -181,7 +173,7 @@ const Draft: NextPage = ({ data, query }: any) => {
       </Head>
 
       <StyledContainer>
-        <StyledBox style={{ background: '#7f00ff0f' }}>
+        <StyledBox>
           <StyledTitle
             spellCheck="false"
             readOnly
@@ -204,7 +196,7 @@ const Draft: NextPage = ({ data, query }: any) => {
           </StyledPreview>
         </StyledBox>
 
-        <StyledRightBox>
+        <StyledBox style={{ background: '#7f00ff0f' }}>
           <StyledTitle
             placeholder="Title"
             spellCheck="false"
@@ -227,7 +219,7 @@ const Draft: NextPage = ({ data, query }: any) => {
           <StyledAction>
             <Button onClick={addBlock}>블록 추가</Button>
           </StyledAction>
-        </StyledRightBox>
+        </StyledBox>
       </StyledContainer>
 
       <style jsx global>{`
