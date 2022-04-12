@@ -105,7 +105,7 @@ const html = (node: any) => {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(remarkMath)
     .use(rehypeRaw)
-    .use(rehypeKatex, { fleqn: true })
+    .use(rehypeKatex, { output: "html", fleqn: true })
     .use(rehypeStringify)
     .processSync(node.markdown)
     .toString();
@@ -261,6 +261,18 @@ const Draft: NextPage = ({ data, query }: any) => {
         span.box {
           margin: 0 !important;
           padding: 0 0.5rem;
+        }
+
+        table {
+          border: 1px solid;
+          border-collapse: collapse;
+          margin: 0.5rem;
+        }
+
+        table th, td {
+          border: 1px solid;
+          padding: 0.25rem;
+          font-weight: inherit;
         }
       `}</style>
     </>
