@@ -9,11 +9,11 @@ import remarkMath from 'remark-math';
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import rehypeRaw from "rehype-raw";
-import rehypeKatex from 'rehype-katex';
 import rehypeStringify from "rehype-stringify";
 import 'katex/dist/katex.min.css'
 import 'katex/contrib/mhchem'
 
+import rehypeKatex from "@/lib/unified/rehypeKatex"
 import answers from "@/lib/unified/answers"
 import box from "@/lib/unified/box"
 import checkbox from '@/lib/unified/checkbox'
@@ -159,6 +159,10 @@ const Post: NextPage<Props> = ({ data }) => {
           border: 1px solid;
           padding: 0.25rem;
           font-weight: inherit;
+        }
+
+        .katex > .katex-html > .base {
+          margin: 0.25rem 0;
         }
       `}</style>
     </>

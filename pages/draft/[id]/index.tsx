@@ -9,11 +9,11 @@ import remarkMath from 'remark-math'
 import remarkGfm from "remark-gfm"
 import remarkDirective from "remark-directive"
 import rehypeRaw from "rehype-raw"
-import rehypeKatex from 'rehype-katex'
 import rehypeStringify from "rehype-stringify"
 import 'katex/dist/katex.min.css'
 import 'katex/contrib/mhchem'
 
+import rehypeKatex from "@/lib/unified/rehypeKatex"
 import box from "@/lib/unified/box"
 import { initializeApollo } from '@/lib/apollo'
 import { styled } from '@/lib/stitches.config'
@@ -95,7 +95,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 }
 
-const html = (node: any) => {
+const html = (node: any) => {  
   return unified()
     .use(remarkParse)
     .use(remarkBreaks)
@@ -273,6 +273,10 @@ const Draft: NextPage = ({ data, query }: any) => {
           border: 1px solid;
           padding: 0.25rem;
           font-weight: inherit;
+        }
+
+        .katex > .katex-html > .base {
+          margin: 0.25rem 0;
         }
       `}</style>
     </>
