@@ -4,19 +4,13 @@ import { useEffect, useState } from "react";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";
-import remarkRehype from "remark-rehype";
 import remarkMath from 'remark-math';
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
-import rehypeRaw from "rehype-raw";
-import rehypeStringify from "rehype-stringify";
 import 'katex/dist/katex.min.css'
 import 'katex/contrib/mhchem'
 
-import rehypeKatex from "@/lib/unified/rehypeKatex"
 import answers from "@/lib/unified/answers"
-import box from "@/lib/unified/box"
-import checkbox from '@/lib/unified/checkbox'
 import { TestQuery } from "@/lib/queries/test.graphql"
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql"
 import Container from '@/components/atoms/Container'
@@ -37,29 +31,31 @@ const Post: NextPage<Props> = ({ data }) => {
     },
   });
 
+
   useEffect(() => {
+    const worker = new Worker(new URL('@/lib/workers/toHtml.ts', import.meta.url))
+
     if (blocksData == null || blocksData.blocks.edges == null) return
     const edges = [...blocksData.blocks.edges]
     edges.sort((a, b) => a.node.index - b.node.index)
-    setBlocks(edges)
-  }, [blocksData])
+    edges.forEach(({ node }: any, index: number) => {
+      const tree = unified()
+        .use(remarkParse)
+        .use(remarkBreaks)
+        .use(remarkGfm)
+        .use(remarkMath)
+        .use(remarkDirective)
+        .parse(node.markdown)
+      worker.postMessage({ tree, ...node, index })
+    })
 
-  const html = (node: any) => {
-    return unified()
-      .use(remarkParse)
-      .use(remarkBreaks)
-      .use(remarkGfm)
-      .use(remarkDirective)
-      .use(box)
-      .use(remarkRehype, { allowDangerousHtml: true })
-      .use(remarkMath)
-      .use(rehypeRaw)
-      .use(rehypeKatex, { output: "html", fleqn: true })
-      .use(rehypeStringify)
-      .use(checkbox, node.id)
-      .processSync(node.markdown)
-      .toString();
-  }
+    const nodes = JSON.parse(JSON.stringify(edges))
+    worker.onmessage = ({ data }) => {
+      nodes[data.index].node.html = data.output
+      const datas = JSON.parse(JSON.stringify(nodes))
+      setBlocks(datas)
+    }
+  }, [blocksData])
 
   const mark = () => {
     const markBlocks = JSON.parse(JSON.stringify(blocks))
@@ -101,7 +97,7 @@ const Post: NextPage<Props> = ({ data }) => {
               mark={block.node.mark}
               key={block.node.id}
             >
-              <div dangerouslySetInnerHTML={{ __html: html(block.node) }} />
+              <div dangerouslySetInnerHTML={{ __html: block.node.html }} />
             </Block>
           );
         })}

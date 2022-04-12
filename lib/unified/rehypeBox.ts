@@ -3,7 +3,7 @@ import { visit } from 'unist-util-visit'
 import { Plugin } from 'unified'
 import { Root } from 'mdast'
 
-const box: Plugin<[], Root> = () => {
+const rehypeBox: Plugin<[], Root> = () => {
   return (tree: any) => {
     visit(tree, (node) => {
       if (
@@ -32,4 +32,4 @@ const box: Plugin<[], Root> = () => {
   }
 }
 
-export default box
+export default rehypeBox

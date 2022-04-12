@@ -1,7 +1,7 @@
 import { u } from 'unist-builder'
 import { visit } from 'unist-util-visit'
 
-const checkbox = (id: string) => {
+const rehypeCheckbox = (id: string) => {
   return (tree: any) => {
     visit(tree, u('element', { tagName: "li" }), (node) => {
       visit(node, u('element', { tagName: "input" }), (node) => {
@@ -31,4 +31,4 @@ const checkbox = (id: string) => {
   }
 }
 
-export default checkbox
+export default rehypeCheckbox

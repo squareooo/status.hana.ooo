@@ -14,7 +14,7 @@ import 'katex/dist/katex.min.css'
 import 'katex/contrib/mhchem'
 
 import rehypeKatex from "@/lib/unified/rehypeKatex"
-import box from "@/lib/unified/box"
+import box from "@/lib/unified/rehypeBox"
 import { initializeApollo } from '@/lib/apollo'
 import { styled } from '@/lib/stitches.config'
 import { TestDocument, TestQueryResult } from '@/lib/queries/test.graphql'
