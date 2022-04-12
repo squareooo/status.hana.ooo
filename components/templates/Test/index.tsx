@@ -12,6 +12,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from "rehype-stringify";
 import 'katex/dist/katex.min.css'
+import 'katex/contrib/mhchem'
 
 import answers from "@/lib/unified/answers"
 import box from "@/lib/unified/box"
