@@ -1,10 +1,6 @@
 import { unified } from "unified";
-import remarkParse from "remark-parse";
 import remarkBreaks from "remark-breaks";
 import remarkRehype from "remark-rehype";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import remarkDirective from "remark-directive";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 
@@ -17,9 +13,14 @@ export default {};
 self.onmessage = ({ data }) => {
   const tree = unified()
     .use(rehypeBox)
+    .use(remarkBreaks)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeKatex, { output: "html", fleqn: true })
+    .use(rehypeKatex, {
+      output: "html",
+      fleqn: true,
+      trust: (context) => context.command === "\\includegraphics",
+    })
     .use(rehypeCheckbox, data.id)
     .runSync(data.tree);
 
