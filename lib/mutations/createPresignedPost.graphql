@@ -1,0 +1,15 @@
+mutation createPresignedPost($input: CreatePresignedPostInput!) {
+  createPresignedPost(input: $input) {
+    url
+    fields {
+      ContentType
+      bucket
+      XAmzAlgorithm
+      XAmzCredential
+      XAmzDate
+      key
+      Policy
+      XAmzSignature
+    }
+  }
+}
