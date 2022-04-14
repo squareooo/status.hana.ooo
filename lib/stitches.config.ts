@@ -1,6 +1,6 @@
-import { createStitches } from '@stitches/react'
+import { createStitches } from "@stitches/react";
 
-const stitches = createStitches({})
+const stitches = createStitches({});
 
-export const styled = stitches.styled
-export const getCssText = stitches.getCssText
+export const styled = stitches.styled;
+export const getCssText = stitches.getCssText;
