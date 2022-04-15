@@ -4,26 +4,22 @@ import MUUID from 'uuid-mongodb'
 
 import createConnection from '@/lib/createConnection'
 
-const test = createConnection('test')
+const hana = createConnection('test')
 
-interface Test extends Document {
+interface Series extends Document {
   id: string | Binary
-  seriesId?: string | Binary
   userId: string | Binary
   name: string
-  publishedAt?: Date
+  desc?: string
 }
 
-const TestModel = new Schema(
+const SeriesModel = new Schema(
   {
     id: {
       type: Object,
       default: MUUID.v4,
       required: true,
       unique: true
-    },
-    seriesId: {
-      type: Object
     },
     userId: {
       type: Object,
@@ -33,8 +29,9 @@ const TestModel = new Schema(
       type: String,
       required: true
     },
-    publishedAt: {
-      type: Date
+    desc: {
+      type: String,
+      required: true
     }
   },
   {
@@ -43,4 +40,4 @@ const TestModel = new Schema(
   }
 )
 
-export default test.model<Test>('test', TestModel)
+export default hana.model<Series>('series', SeriesModel)
