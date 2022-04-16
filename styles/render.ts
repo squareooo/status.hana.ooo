@@ -57,4 +57,8 @@ export default css.global`
   .katex > .katex-html > .base {
     margin: 0.25rem 0;
   }
+
+  img {
+    vertical-align: middle;
+  }
 `;
