@@ -8,10 +8,10 @@ const rehypeBox: Plugin<[], Root> = () => {
     visit(tree, (node) => {
       if (
         node.type === "textDirective" ||
-        node.type === "leafDirective" ||
+        // node.type === "leafDirective" ||
         node.type === "containerDirective"
       ) {
-        if (node.name !== "box") return;
+        if (node.name !== "boxed") return;
 
         const data = node.data || (node.data = {});
         const tagName = node.type === "textDirective" ? "span" : "div";
@@ -28,7 +28,7 @@ const rehypeBox: Plugin<[], Root> = () => {
         }
 
         data.hName = tagName;
-        data.hProperties = h(tagName, { class: "box" }).properties;
+        data.hProperties = h(tagName, { class: "boxed" }).properties;
       }
     });
   };

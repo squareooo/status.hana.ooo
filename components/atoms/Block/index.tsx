@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-const StyledBlock = styled("main", {
+const StyledBlock = styled("div", {
   margin: "0.5rem 0",
   padding: "0.5rem",
   borderRadius: "0.5rem",

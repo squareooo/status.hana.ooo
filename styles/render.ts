@@ -16,27 +16,41 @@ export default css.global`
     margin: 0 1.5rem;
   }
 
-  .box {
+  ul {
+    list-style: none;
+  }
+
+  ol {
+    list-style: circled-numbers;
+  }
+
+  @counter-style circled-numbers {
+    system: fixed;
+    symbols: ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳;
+    suffix: " ";
+  }
+
+  .boxed {
     border: 1px solid black;
     margin: 0.5rem 0;
   }
 
-  .box > p {
+  .boxed > p {
     margin: 0.5rem;
   }
 
-  .box > .directiveLabel {
+  .boxed > .directiveLabel {
     display: inline-block;
     padding: 0.25rem 0.5rem;
     background: black;
     color: white;
   }
 
-  .box .box {
+  .boxed .boxed {
     margin: 0.5rem;
   }
 
-  span.box {
+  span.boxed {
     margin: 0 !important;
     padding: 0 0.5rem;
   }
