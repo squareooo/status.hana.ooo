@@ -13,7 +13,7 @@ import { cookieStorage } from "@/lib/cookieStorage";
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 
 const authLink = setContext((_, { headers }) => {
-  let accessToken = "";
+  let accessToken: string | null = "";
   if (typeof window !== "undefined") {
     accessToken = cookieStorage.getItem("access_token");
   }

@@ -27,7 +27,7 @@ export default (() => {
 
         const date = new Date()
         date.setFullYear(date.getFullYear() + 1)
-        cookieStorage.setItem('access_token', data.token.accessToken, {
+        cookieStorage.setItem('access_token', data.token.accessToken as string, {
           expires: date
         })
         localStorage.setItem('id_token', data.token.idToken as string)
