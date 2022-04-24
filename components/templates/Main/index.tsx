@@ -12,7 +12,7 @@ const Main: NextPage<Props> = ({ data }) => {
     <>
       {data.tests.edges?.map((test) => {
         return (
-          <a href={`/${test?.node.id}`}>
+          <a href={`/${test?.node.id}`} key={test?.cursor}>
             <div>{test?.node.name}</div>
           </a>
         );
