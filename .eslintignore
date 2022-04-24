@@ -1,0 +1,4 @@
+# graphql-let
+.cache
+*.graphql.d.ts
+*.graphqls.d.ts

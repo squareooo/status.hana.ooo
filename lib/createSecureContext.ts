@@ -7,7 +7,8 @@ const createSecureContext = async (servername: string) => {
   try {
     const data = await Cert.findOne({
       DOMAIN: servername
-    }).lean()
+    })
+    if (data == null) throw ''
 
     return tls.createSecureContext({
       key: data.KEY,

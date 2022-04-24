@@ -1,19 +1,26 @@
-import { Schema, Document } from 'mongoose'
+import { Document, Schema, Model } from "mongoose";
 
-import createConnection from '@/lib/createConnection'
+import createConnection from "@/lib/createConnection";
 
-const alice = createConnection('alice')
+const alice = createConnection("alice");
 
 interface Cert extends Document {
+  DOMAIN: string;
   KEY: string;
   CERT: string;
 }
 
-const CertModel = new Schema({
+const CertSchema = new Schema<Cert>({
   DOMAIN: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+  KEY: {
+    type: String,
+  },
+  CERT: {
+    type: String,
+  },
+});
 
-export default alice.model<Cert>('cert', CertModel)
+export default alice.model<Cert>("cert", CertSchema);
