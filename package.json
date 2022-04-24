@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "DOTENV_CONFIG_PATH=.env.local graphql-let -r dotenv/config && next dev",
+    "ts": "ts-node -P server.tsconfig.json -r tsconfig-paths/register -r dotenv/config server.ts",
+    "dev": "DOTENV_CONFIG_PATH=.env.local graphql-let -r dotenv/config && yarn ts dotenv_config_path=.env.local",
     "build": "graphql-let -r dotenv/config && next build",
-    "start": "next start",
+    "start": "NODE_ENV=production yarn ts",
     "lint": "next lint",
     "prepare": "husky install"
   },
@@ -16,6 +17,7 @@
     "cookie-storage": "^6.1.0",
     "hastscript": "^7.0.2",
     "mime-types": "^2.1.35",
+    "mongoose": "^6.3.1",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
