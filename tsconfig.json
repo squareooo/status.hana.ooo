@@ -19,6 +19,6 @@
       "@/*": ["*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".cache"]
+  "include": ["next-env.d.ts", "graphql-let.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": [".cache"]
 }
