@@ -5,8 +5,8 @@
   "repository": "https://github.com/momenthana/xtest.hana.ooo.git",
   "author": "Hana <momenthana@kakao.com>",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register -r dotenv/config src/index",
-    "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config src/index dotenv_config_path=.env.dev",
+    "start": "ts-node -r tsconfig-paths/register -r dotenv/config ./src/index.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config ./src/index.ts dotenv_config_path=.env.dev",
     "lint": "eslint . --fix",
     "prepare": "husky install"
   },
@@ -24,6 +24,7 @@
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "mime-types": "^2.1.35",
+    "mongodb": "^4.5.0",
     "mongoose": "^6.1.4",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.12.0",
@@ -33,6 +34,9 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.7",
+    "@types/koa__cors": "^3.3.0",
     "@types/mime-types": "^2.1.1",
     "@types/node": "^17.0.15",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
@@ -44,5 +48,6 @@
     "eslint-plugin-promise": "^5.2.0",
     "husky": "^7.0.4",
     "ts-node-dev": "^1.1.8"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
