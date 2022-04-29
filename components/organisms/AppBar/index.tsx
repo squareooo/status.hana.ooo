@@ -35,7 +35,7 @@ const AppBar: NextPage = () => {
 
   useEffect(() => {
     setAccessToken(cookieStorage.getItem("access_token") ?? "");
-  }, []);
+  }, [setAccessToken]);
 
   Hana.init({ clientId: process.env.NEXT_PUBLIC_CLIENT_ID as string });
 

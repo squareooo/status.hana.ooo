@@ -8,7 +8,7 @@ import rehypeBox from "@/lib/unified/rehypeBox";
 import rehypeCheckbox from "@/lib/unified/rehypeCheckbox";
 import rehypeKatex from "@/lib/unified/rehypeKatex";
 
-export default {};
+const toHtml = {};
 
 self.onmessage = ({ data }) => {
   const tree = unified()
@@ -28,3 +28,5 @@ self.onmessage = ({ data }) => {
 
   self.postMessage({ output, index: data.index });
 };
+
+export default toHtml;

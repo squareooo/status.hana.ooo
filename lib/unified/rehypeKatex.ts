@@ -1,6 +1,6 @@
 import { Plugin } from "unified";
 import { Root } from "hast";
-import katex from "katex";
+import katex, { KatexOptions } from "katex";
 import { visit } from "unist-util-visit";
 import { removePosition } from "unist-util-remove-position";
 import { toText } from "hast-util-to-text";
@@ -13,7 +13,7 @@ const parseHtml = unified().use(rehypeParse, { fragment: true });
 
 const source = "rehype-katex";
 
-const rehypeKatex: Plugin<[katex.KatexOptions?], Root> = (options) => {
+const rehypeKatex: Plugin<[KatexOptions?], Root> = (options) => {
   const settings = options || {};
   const throwOnError = settings.throwOnError || false;
 

@@ -1,5 +1,5 @@
 {
-  "extends": ["standard-with-typescript", "next/core-web-vitals", "prettier"],
+  "extends": ["next/core-web-vitals", "prettier"],
   "parserOptions": {
     "project": "./tsconfig.json"
   }
