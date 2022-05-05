@@ -7,7 +7,7 @@ export const token = async (
   { ctx }: any
 ): Promise<any> => {
   try {
-    const refreshToken = ctx.cookies.get('refresh_token')
+    const refreshToken = ctx.request.cookies.refresh_token
 
     Hana.init({
       clientId: env.CLIENT_ID as string

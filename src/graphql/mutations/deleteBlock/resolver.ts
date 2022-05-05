@@ -1,4 +1,4 @@
-import { AuthenticationError } from 'apollo-server-koa'
+import { AuthenticationError } from 'apollo-server-core'
 import MUUID from 'uuid-mongodb'
 import { ListObjectsCommand, DeleteObjectsCommand } from '@aws-sdk/client-s3'
 

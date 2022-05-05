@@ -1,43 +1,50 @@
-import Koa from 'koa'
-import cors from '@koa/cors'
-import bodyParser from 'koa-bodyparser'
-import http from 'http'
-import https from 'https'
 import { env } from 'process'
-import { ApolloServer } from 'apollo-server-koa'
+import { ApolloServer } from 'apollo-server-fastify'
+import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core'
+import { ApolloServerPlugin } from 'apollo-server-plugin-base'
+import fastify, { FastifyInstance } from 'fastify'
 import Hana from 'hana.js'
 
-import typeDefs from '@/graphql/typeDefs'
-import resolvers from '@/graphql/resolvers'
+const fastifyAppClosePlugin = (app: FastifyInstance): ApolloServerPlugin => {
+  return {
+    async serverWillStart () {
+      return {
+        async drainServer () {
+          await app.close()
+        }
+      }
+    }
+  }
+}
 
-export const start = (): void => {
-  const app = new Koa()
-  app.use(bodyParser())
-
-  app.use(
-    cors({
-      credentials: true
-    })
-  )
-
-  const apollo = new ApolloServer({
-    context: async ({ ctx }) => {
+export const startApolloServer = async (
+  typeDefs: any,
+  resolvers: any
+): Promise<void> => {
+  const app = fastify({
+    https: {
+      key: env.KEY ?? undefined,
+      cert: env.CERT ?? undefined
+    }
+  })
+  const server = new ApolloServer({
+    context: async (ctx) => {
       try {
-        if (
-          ctx.request.body.query
-            .trim()
-            .startsWith('query IntrospectionQuery') === true
-        ) {
+        const { operationName }: any = ctx.request.body
+
+        if (operationName === 'IntrospectionQuery') {
           if (env.NODE_ENV !== 'production') return { ctx }
 
-          const authorization = ctx.req.headers.authorization.split(' ')
+          if (ctx.request.headers.authorization == null) throw new Error()
+
+          const authorization = ctx.request.headers.authorization.split(' ')
 
           if (authorization[1] !== env.TOKEN) throw new Error()
         }
 
-        if (ctx.req.headers.authorization == null) return { ctx }
+        if (ctx.request.headers.authorization == null) return { ctx }
 
-        const authorization = ctx.req.headers.authorization.split(' ')
+        const authorization = ctx.request.headers.authorization.split(' ')
 
         if (authorization[0] !== 'Bearer') return { ctx }
 
@@ -51,33 +58,29 @@ export const start = (): void => {
       }
     },
     typeDefs,
-    resolvers
+    resolvers,
+    plugins: [
+      fastifyAppClosePlugin(app as any),
+      ApolloServerPluginDrainHttpServer({ httpServer: app.server as any })
+    ]
   })
 
-  apollo.applyMiddleware({
-    app,
-    cors: {
-      origin: (ctx) => {
-        return ctx.headers.origin as string
+  await server.start()
+  app.register(import('@fastify/cookie'))
+  app.register(
+    server.createHandler({
+      cors: {
+        origin: (_origin: any, cb: any) => {
+          cb(null, true)
+        },
+        credentials: true
       }
-    }
-  })
-
-  const httpPort = env.HTTP != null && env.HTTP !== '' ? Number(env.HTTP) : 80
-  http.createServer(app.callback()).listen(httpPort, () => {
-    console.log(`🚀  Server ready at http://localhost:${httpPort}/graphql`)
-  })
-
-  const httpsPort = env.HTTPS != null && env.HTTPS !== '' ? Number(env.HTTPS) : 443
-  https
-    .createServer(
-      {
-        key: env.KEY ?? undefined,
-        cert: env.CERT ?? undefined
-      },
-      app.callback()
-    )
-    .listen(httpsPort, () => {
-      console.log(`🚀  Server ready at https://localhost:${httpsPort}/graphql`)
     })
+  )
+  await app.listen(env.PORT ?? 4000)
+  console.log(
+    `🚀 Server ready at https://localhost:${env.PORT ?? 4000}${
+      server.graphqlPath
+    }`
+  )
 }
