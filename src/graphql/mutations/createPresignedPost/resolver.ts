@@ -4,32 +4,32 @@ import { createPresignedPost as s3PresignedPost } from '@aws-sdk/s3-presigned-po
 import mime from 'mime-types'
 
 import { s3Client } from '@/lib/s3Client'
-import Block from '@/models/block'
+import Test from '@/models/block'
 
 export const createPresignedPost = async (
   _: any,
-  args: { input: { blockId: string, fileName: string } },
+  args: { input: { testId: string, fileName: string } },
   { payload }: { payload?: { sub: string } }
 ): Promise<any> => {
   try {
     if (payload == null) return new AuthenticationError('')
 
-    const blockId = args.input.blockId.replace(
+    const testId = args.input.testId.replace(
       /(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})/,
       '$1-$2-$3-$4-$5'
     )
-    const block = await Block.findOne({
-      id: MUUID.from(blockId),
+    const test = await Test.findOne({
+      id: MUUID.from(testId),
       userId: MUUID.from(payload.sub)
     })
 
-    if (block == null) return
+    if (test == null) return
 
     const contentType = mime.lookup(args.input.fileName)
 
     if (contentType === false) return
 
-    const uuid = MUUID.from(block.id).toString('N')
+    const uuid = MUUID.from(test.id).toString('N')
     const name = MUUID.v4().toString('N')
     const extension = mime.extension(contentType) as string
 
