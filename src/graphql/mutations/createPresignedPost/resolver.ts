@@ -4,7 +4,7 @@ import { createPresignedPost as s3PresignedPost } from '@aws-sdk/s3-presigned-po
 import mime from 'mime-types'
 
 import { s3Client } from '@/lib/s3Client'
-import Test from '@/models/block'
+import Test from '@/models/test'
 
 export const createPresignedPost = async (
   _: any,
@@ -22,11 +22,9 @@ export const createPresignedPost = async (
       id: MUUID.from(testId),
       userId: MUUID.from(payload.sub)
     })
-
     if (test == null) return
 
     const contentType = mime.lookup(args.input.fileName)
-
     if (contentType === false) return
 
     const uuid = MUUID.from(test.id).toString('N')
