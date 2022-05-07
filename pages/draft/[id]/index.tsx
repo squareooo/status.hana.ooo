@@ -33,11 +33,11 @@ import {
 import Button from "@/components/atoms/Button";
 import Block from "@/components/atoms/Block";
 import Icon from "@/components/atoms/Icon";
-import { text } from "stream/consumers";
 
 const StyledContainer = styled("div", {
   minHeight: "100%",
   display: "flex",
+  height: "100%",
 });
 
 const StyledBox = styled("div", {
@@ -243,7 +243,7 @@ const Draft: NextPage = ({ data, query }: any) => {
 
   const handleTextareaHeight = (e: any) => {
     const textarea: any = e?.target ?? e;
-    if (!textarea) return
+    if (!textarea) return;
     textarea.style.height = "auto";
     textarea.style.height = `${textarea.scrollHeight}px`;
   };
@@ -267,7 +267,7 @@ const Draft: NextPage = ({ data, query }: any) => {
     await deleteBlockMutation({
       variables: {
         input: {
-          id: newBlocks[index].node.id
+          id: newBlocks[index].node.id,
         },
       },
     });

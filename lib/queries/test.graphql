@@ -1,6 +1,8 @@
 query test($input: TestInput!) {
   test(input: $input) {
     id
+    userId
     name
+    publishedAt
   }
 }
