@@ -32,6 +32,7 @@ import {
 import Button from "@/components/atoms/Button";
 import Block from "@/components/atoms/Block";
 import Icon from "@/components/atoms/Icon";
+import { text } from "stream/consumers";
 
 const StyledContainer = styled("div", {
   minHeight: "100%",
@@ -86,7 +87,7 @@ const StyledTextarea = styled("textarea", {
   border: "none",
   resize: "none",
   outline: "none",
-  height: "300px",
+  height: "16rem",
   fontSize: "1rem",
   padding: "0 0.5rem",
   background: "transparent",
@@ -125,7 +126,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 };
 
-const html = (node: any) => {
+const html = (markdown: string) => {
   return unified()
     .use(remarkParse)
     .use(remarkBreaks)
@@ -141,21 +142,22 @@ const html = (node: any) => {
       trust: (context) => context.command === "\\includegraphics",
     })
     .use(rehypeStringify)
-    .processSync(node.markdown)
+    .processSync(markdown)
     .toString();
 };
 
 const Draft: NextPage = ({ data, query }: any) => {
+  const testId = query.id;
   const apolloClient = initializeApollo();
   const [createBlockMutation] = useCreateBlockMutation();
   const [updateBlockMutation] = useUpdateBlockMutation();
   const [title, setTitle] = useState(data.test.name);
-  const [blocks, setBlocks] = useState<any>([]);
+  const [blocks, setBlocks] = useState<Array<any>>([]);
 
   const { data: blocksData } = useBlocksQuery({
     variables: {
       input: {
-        testId: query.id as string,
+        testId: testId,
       },
     },
   });
@@ -173,11 +175,10 @@ const Draft: NextPage = ({ data, query }: any) => {
     setBlocks(edges);
   }, [blocksData]);
 
-  const handleDrop = (e: any, id: string) => {
+  const handleTextareaDrop = (e: any, index: number) => {
     if (!e.dataTransfer.files[0]) return;
 
     e.preventDefault();
-
     const files = [...e.dataTransfer.files];
     files.forEach(async (file) => {
       if (file.name.startsWith(".")) return alert("이 파일은 숨겨져 있습니다.");
@@ -185,56 +186,52 @@ const Draft: NextPage = ({ data, query }: any) => {
       const contentType = mime.lookup(file.name);
       if (contentType === false) return alert("파일 형식을 지원하지 않습니다.");
 
-      const markdownBlocks = JSON.parse(JSON.stringify(blocks));
-      for (const block of markdownBlocks) {
-        if (block.node.id === id) {
-          const isImage = contentType.startsWith("image/");
-          const newline = block.node.markdown ? "\n" : "";
-          const fileType = isImage ? "!" : "";
-          const fileName = isImage ? file.name.replace(/.\w*$/, "") : file.name;
+      const newBlocks = JSON.parse(JSON.stringify(blocks));
+      const newBlock = newBlocks[index];
+      const isImage = contentType.startsWith("image/");
+      const newline = newBlock.node.markdown ? "\n" : "";
+      const fileType = isImage ? "!" : "";
+      const fileName = isImage ? file.name.replace(/.\w*$/, "") : file.name;
 
-          const { data } = (await apolloClient.mutate({
-            mutation: CreatePresignedPostDocument,
-            variables: {
-              input: {
-                blockId: id,
-                fileName: file.name,
-              },
-            } as CreatePresignedPostMutationVariables,
-          })) as CreatePresignedPostMutationResult;
+      const { data } = (await apolloClient.mutate({
+        mutation: CreatePresignedPostDocument,
+        variables: {
+          input: {
+            testId: testId,
+            fileName: file.name,
+          },
+        } as CreatePresignedPostMutationVariables,
+      })) as CreatePresignedPostMutationResult;
+      if (data == null) return;
 
-          if (data == null) return;
-
-          const formData = new FormData();
-          const fields = data.createPresignedPost.fields;
-          if (fields.ContentType)
-            formData.append("Content-Type", fields.ContentType);
-          formData.append("bucket", fields.bucket);
-          formData.append("X-Amz-Algorithm", fields.XAmzAlgorithm);
-          formData.append("X-Amz-Credential", fields.XAmzCredential);
-          formData.append("X-Amz-Date", fields.XAmzDate);
-          formData.append("key", fields.key);
-          formData.append("Policy", fields.Policy);
-          formData.append("X-Amz-Signature", fields.XAmzSignature);
-          formData.append("file", file);
-
-          await axios.post(data.createPresignedPost.url, formData);
-
-          const url = `${data.createPresignedPost.url}/${fields.key}`;
-          block.node.markdown += `${newline}${fileType}[${fileName}](${url})\n`;
-
-          updateBlockMutation({
-            variables: {
-              input: {
-                id: id,
-                markdown: block.node.markdown,
-              },
-            },
-          });
-
-          setBlocks(markdownBlocks);
-        }
+      const formData = new FormData();
+      const fields = data.createPresignedPost.fields;
+      if (fields.ContentType) {
+        formData.append("Content-Type", fields.ContentType);
       }
+      formData.append("bucket", fields.bucket);
+      formData.append("X-Amz-Algorithm", fields.XAmzAlgorithm);
+      formData.append("X-Amz-Credential", fields.XAmzCredential);
+      formData.append("X-Amz-Date", fields.XAmzDate);
+      formData.append("key", fields.key);
+      formData.append("Policy", fields.Policy);
+      formData.append("X-Amz-Signature", fields.XAmzSignature);
+      formData.append("file", file);
+
+      await axios.post(data.createPresignedPost.url, formData);
+
+      const url = `${data.createPresignedPost.url}/${fields.key}`;
+      newBlock.node.markdown += `${newline}${fileType}[${fileName}](${url})\n`;
+
+      updateBlockMutation({
+        variables: {
+          input: {
+            id: newBlock.node.id,
+            markdown: newBlock.node.markdown,
+          },
+        },
+      });
+      setBlocks(newBlocks);
     });
   };
 
@@ -242,56 +239,55 @@ const Draft: NextPage = ({ data, query }: any) => {
     setTitle(e.target.value as string);
   };
 
-  const handleTextarea = (e: any) => {
-    e.target.style.height = "auto";
-    e.target.style.height = e.target.scrollHeight + "px";
+  const handleTextareaHeight = (e: any) => {
+    const textarea: any = e?.target ?? e;
+    if (!textarea) return
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
-  const handleTextChange = (e: any, id: string) => {
-    const markdownBlocks = JSON.parse(JSON.stringify(blocks));
+  const handleTextareaInput = (e: any, block: any, index: number) => {
+    const newBlocks = JSON.parse(JSON.stringify(blocks));
     updateBlockMutation({
       variables: {
         input: {
-          id: id,
+          id: block.node.id,
           markdown: e.target.value,
         },
       },
     });
-    for (const block of markdownBlocks) {
-      if (block.node.id === id) block.node.markdown = e.target.value;
-    }
-    setBlocks(markdownBlocks);
+    newBlocks[index].node.markdown = e.target.value;
+    setBlocks(newBlocks);
   };
 
   const addBlock = async (index: number) => {
+    const newBlocks = JSON.parse(JSON.stringify(blocks));
+    const newBlockIndex = index + 1;
     const { data } = await createBlockMutation({
       variables: {
         input: {
           testId: query.id,
-          index: index,
+          index: newBlockIndex,
           markdown: "",
         },
       },
     });
-    const newBlocks = [
-      ...JSON.parse(JSON.stringify(blocks)),
-      {
-        node: data?.createBlock,
-      },
-    ];
-    for (let i = index; i < blocks.length; i++) {
-      const block = blocks[i];
-      await updateBlockMutation({
+    newBlocks.splice(newBlockIndex, 0, {
+      node: data?.createBlock,
+    });
+    newBlocks.map((block: any, index: number) => {
+      if (block.node.index == index) return;
+
+      updateBlockMutation({
         variables: {
           input: {
             id: block.node.id,
-            index: i + 1,
+            index: index,
           },
         },
       });
-      newBlocks[i].node.index = i + 1
-    }
-    newBlocks.sort((a, b) => a.node.index - b.node.index);
+      block.node.index = index;
+    });
     setBlocks(newBlocks);
   };
 
@@ -311,7 +307,11 @@ const Draft: NextPage = ({ data, query }: any) => {
 
               return (
                 <Block mark={block.node.mark} key={block.node.id}>
-                  <div dangerouslySetInnerHTML={{ __html: html(block.node) }} />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: html(block.node.markdown),
+                    }}
+                  />
                 </Block>
               );
             })}
@@ -326,27 +326,27 @@ const Draft: NextPage = ({ data, query }: any) => {
             onChange={handleTitleChange}
           />
 
-          {blocks?.map(({ node }: any) => (
-            <Boxed key={node.id}>
+          {blocks?.map((block: any, index) => (
+            <Boxed key={block.node.id}>
               <HoverItems>
                 <Icon>close</Icon>
-                <Icon onClick={() => addBlock(node.index + 1)}>add</Icon>
+                <Icon onClick={() => addBlock(index)}>add</Icon>
               </HoverItems>
 
               <StyledTextarea
+                ref={(e) => handleTextareaHeight(e)}
                 placeholder="Text"
                 spellCheck="false"
-                defaultValue={node.markdown}
-                onChange={(e) => handleTextarea(e)}
-                onInput={(e) => handleTextChange(e, node.id)}
-                onDrop={(e) => handleDrop(e, node.id)}
+                value={block.node.markdown}
+                onInput={(e) => handleTextareaInput(e, block, index)}
+                onDrop={(e) => handleTextareaDrop(e, index)}
               />
             </Boxed>
           ))}
 
           {blocks.length == 0 && (
             <StyledAction>
-              <Button onClick={() => addBlock(0)}>블록 추가</Button>
+              <Button onClick={() => addBlock(-1)}>블록 추가</Button>
             </StyledAction>
           )}
         </StyledBox>
