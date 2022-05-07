@@ -31,6 +31,7 @@ import {
 } from "@/lib/mutations/createPresignedPost.graphql";
 import Button from "@/components/atoms/Button";
 import Block from "@/components/atoms/Block";
+import Icon from "@/components/atoms/Icon";
 
 const StyledContainer = styled("div", {
   minHeight: "100%",
@@ -64,15 +65,36 @@ const StyledPreview = styled("div", {
   },
 });
 
+const HoverItems = styled("div", {
+  display: "flex",
+  visibility: "hidden",
+  flexDirection: "column",
+});
+
+const Boxed = styled("div", {
+  display: "flex",
+  margin: "0.5rem 0",
+  "&:hover": {
+    [`& ${HoverItems}`]: {
+      visibility: "visible",
+    },
+  },
+});
+
 const StyledTextarea = styled("textarea", {
-  border: "1px solid",
+  width: "100%",
+  border: "none",
   resize: "none",
   outline: "none",
   height: "300px",
   fontSize: "1rem",
-  padding: "1rem",
-  margin: "0.5rem 1rem",
-  background: "white",
+  padding: "0 0.5rem",
+  background: "transparent",
+  scrollbarWidth: "none",
+  "-ms-overflow-style": "none",
+  "&::-webkit-scrollbar": {
+    display: "none",
+  },
 });
 
 const StyledAction = styled("div", {
@@ -220,6 +242,11 @@ const Draft: NextPage = ({ data, query }: any) => {
     setTitle(e.target.value as string);
   };
 
+  const handleTextarea = (e: any) => {
+    e.target.style.height = "auto";
+    e.target.style.height = e.target.scrollHeight + "px";
+  };
+
   const handleTextChange = (e: any, id: string) => {
     const markdownBlocks = JSON.parse(JSON.stringify(blocks));
     updateBlockMutation({
@@ -236,22 +263,36 @@ const Draft: NextPage = ({ data, query }: any) => {
     setBlocks(markdownBlocks);
   };
 
-  const addBlock = async () => {
+  const addBlock = async (index: number) => {
     const { data } = await createBlockMutation({
       variables: {
         input: {
           testId: query.id,
-          index: blocks.length ? blocks[blocks.length - 1].node.index + 1 : 0,
+          index: index,
           markdown: "",
         },
       },
     });
-    setBlocks([
-      ...blocks,
+    const newBlocks = [
+      ...JSON.parse(JSON.stringify(blocks)),
       {
         node: data?.createBlock,
       },
-    ]);
+    ];
+    for (let i = index; i < blocks.length; i++) {
+      const block = blocks[i];
+      await updateBlockMutation({
+        variables: {
+          input: {
+            id: block.node.id,
+            index: i + 1,
+          },
+        },
+      });
+      newBlocks[i].node.index = i + 1
+    }
+    newBlocks.sort((a, b) => a.node.index - b.node.index);
+    setBlocks(newBlocks);
   };
 
   return (
@@ -285,22 +326,29 @@ const Draft: NextPage = ({ data, query }: any) => {
             onChange={handleTitleChange}
           />
 
-          {blocks?.map(({ node }: any) => {
-            return (
+          {blocks?.map(({ node }: any) => (
+            <Boxed key={node.id}>
+              <HoverItems>
+                <Icon>close</Icon>
+                <Icon onClick={() => addBlock(node.index + 1)}>add</Icon>
+              </HoverItems>
+
               <StyledTextarea
                 placeholder="Text"
                 spellCheck="false"
                 defaultValue={node.markdown}
-                key={node.id}
-                onChange={(e) => handleTextChange(e, node.id)}
+                onChange={(e) => handleTextarea(e)}
+                onInput={(e) => handleTextChange(e, node.id)}
                 onDrop={(e) => handleDrop(e, node.id)}
               />
-            );
-          })}
+            </Boxed>
+          ))}
 
-          <StyledAction>
-            <Button onClick={addBlock}>블록 추가</Button>
-          </StyledAction>
+          {blocks.length == 0 && (
+            <StyledAction>
+              <Button onClick={() => addBlock(0)}>블록 추가</Button>
+            </StyledAction>
+          )}
         </StyledBox>
       </StyledContainer>
 
