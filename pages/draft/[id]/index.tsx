@@ -24,6 +24,7 @@ import { TestDocument, TestQueryResult } from "@/lib/queries/test.graphql";
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
 import { useCreateBlockMutation } from "@/lib/mutations/createBlock.graphql";
 import { useUpdateBlockMutation } from "@/lib/mutations/updateBlock.graphql";
+import { useDeleteBlockMutation } from "@/lib/mutations/deleteBlock.graphql";
 import {
   CreatePresignedPostDocument,
   CreatePresignedPostMutationResult,
@@ -151,6 +152,7 @@ const Draft: NextPage = ({ data, query }: any) => {
   const apolloClient = initializeApollo();
   const [createBlockMutation] = useCreateBlockMutation();
   const [updateBlockMutation] = useUpdateBlockMutation();
+  const [deleteBlockMutation] = useDeleteBlockMutation();
   const [title, setTitle] = useState(data.test.name);
   const [blocks, setBlocks] = useState<Array<any>>([]);
 
@@ -260,7 +262,33 @@ const Draft: NextPage = ({ data, query }: any) => {
     setBlocks(newBlocks);
   };
 
-  const addBlock = async (index: number) => {
+  const deleteBlock = async (index: number) => {
+    const newBlocks = JSON.parse(JSON.stringify(blocks));
+    await deleteBlockMutation({
+      variables: {
+        input: {
+          id: newBlocks[index].node.id
+        },
+      },
+    });
+    newBlocks.splice(index, 1);
+    newBlocks.map((block: any, index: number) => {
+      if (block.node.index == index) return;
+
+      updateBlockMutation({
+        variables: {
+          input: {
+            id: block.node.id,
+            index: index,
+          },
+        },
+      });
+      block.node.index = index;
+    });
+    setBlocks(newBlocks);
+  };
+
+  const createBlock = async (index: number) => {
     const newBlocks = JSON.parse(JSON.stringify(blocks));
     const newBlockIndex = index + 1;
     const { data } = await createBlockMutation({
@@ -329,8 +357,8 @@ const Draft: NextPage = ({ data, query }: any) => {
           {blocks?.map((block: any, index) => (
             <Boxed key={block.node.id}>
               <HoverItems>
-                <Icon>close</Icon>
-                <Icon onClick={() => addBlock(index)}>add</Icon>
+                <Icon onClick={() => deleteBlock(index)}>close</Icon>
+                <Icon onClick={() => createBlock(index)}>add</Icon>
               </HoverItems>
 
               <StyledTextarea
@@ -346,7 +374,7 @@ const Draft: NextPage = ({ data, query }: any) => {
 
           {blocks.length == 0 && (
             <StyledAction>
-              <Button onClick={() => addBlock(-1)}>블록 추가</Button>
+              <Button onClick={() => createBlock(-1)}>블록 추가</Button>
             </StyledAction>
           )}
         </StyledBox>
