@@ -15,6 +15,7 @@ import { TestQuery } from "@/lib/queries/test.graphql";
 import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
 import Container from "@/components/atoms/Container";
 import Block from "@/components/atoms/Block";
+import AppBar from "@/components/organisms/AppBar";
 
 interface Props {
   data: TestQuery;
@@ -87,6 +88,8 @@ const Post: NextPage<Props> = ({ data }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data.test.name} />
       </Head>
+
+      <AppBar />
 
       <Container>
         <h1>{data.test.name}</h1>

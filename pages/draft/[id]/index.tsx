@@ -3,21 +3,10 @@ import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import mime from "mime-types";
 import axios from "axios";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkBreaks from "remark-breaks";
-import remarkRehype from "remark-rehype";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import remarkDirective from "remark-directive";
-import rehypeRaw from "rehype-raw";
-import rehypeStringify from "rehype-stringify";
 import "katex/dist/katex.min.css";
 import "katex/contrib/mhchem";
 
 import renderStyles from "@/styles/render";
-import rehypeKatex from "@/lib/unified/rehypeKatex";
-import box from "@/lib/unified/rehypeBox";
 import { initializeApollo } from "@/lib/apollo";
 import { styled } from "@/lib/stitches.config";
 import { TestDocument, TestQueryResult } from "@/lib/queries/test.graphql";
@@ -31,8 +20,8 @@ import {
   CreatePresignedPostMutationVariables,
 } from "@/lib/mutations/createPresignedPost.graphql";
 import Button from "@/components/atoms/Button";
-import Block from "@/components/atoms/Block";
 import Icon from "@/components/atoms/Icon";
+import Blocks from "@/components/organisms/Blocks";
 
 const StyledContainer = styled("div", {
   minHeight: "100%",
@@ -43,7 +32,6 @@ const StyledContainer = styled("div", {
 const StyledBox = styled("div", {
   position: "relative",
   width: "50%",
-  display: "flex",
   flex: "1 1",
   flexDirection: "column",
   overflowY: "auto",
@@ -75,6 +63,7 @@ const HoverItems = styled("div", {
 
 const Boxed = styled("div", {
   display: "flex",
+  padding: "0.5rem 0",
   margin: "0.5rem 0",
   "&:hover": {
     [`& ${HoverItems}`]: {
@@ -127,26 +116,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 };
 
-const html = (markdown: string) => {
-  return unified()
-    .use(remarkParse)
-    .use(remarkBreaks)
-    .use(remarkGfm)
-    .use(remarkDirective)
-    .use(box)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(remarkMath)
-    .use(rehypeRaw)
-    .use(rehypeKatex, {
-      output: "html",
-      fleqn: true,
-      trust: (context) => context.command === "\\includegraphics",
-    })
-    .use(rehypeStringify)
-    .processSync(markdown)
-    .toString();
-};
-
 const Draft: NextPage = ({ data, query }: any) => {
   const testId = query.id;
   const apolloClient = initializeApollo();
@@ -154,7 +123,7 @@ const Draft: NextPage = ({ data, query }: any) => {
   const [updateBlockMutation] = useUpdateBlockMutation();
   const [deleteBlockMutation] = useDeleteBlockMutation();
   const [title, setTitle] = useState(data.test.name);
-  const [blocks, setBlocks] = useState<Array<any>>([]);
+  const [blocks, setBlocks] = useState<any[]>([]);
 
   const { data: blocksData } = useBlocksQuery({
     variables: {
@@ -172,9 +141,10 @@ const Draft: NextPage = ({ data, query }: any) => {
 
   useEffect(() => {
     if (blocksData == null || blocksData.blocks.edges == null) return;
-    const edges = [...blocksData.blocks.edges];
-    edges.sort((a, b) => a.node.index - b.node.index);
-    setBlocks(edges);
+
+    const newBlocks = JSON.parse(JSON.stringify(blocksData.blocks.edges));
+    newBlocks.sort((a: any, b: any) => a.node.index - b.node.index);
+    setBlocks(newBlocks);
   }, [blocksData]);
 
   const handleTextareaDrop = (e: any, index: number) => {
@@ -330,19 +300,7 @@ const Draft: NextPage = ({ data, query }: any) => {
           <StyledTitle spellCheck="false" readOnly value={title} />
 
           <StyledPreview>
-            {blocks?.map((block: any) => {
-              if (!block) return <div>Loading...</div>;
-
-              return (
-                <Block mark={block.node.mark} key={block.node.id}>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: html(block.node.markdown),
-                    }}
-                  />
-                </Block>
-              );
-            })}
+            <Blocks blocks={blocks} />
           </StyledPreview>
         </StyledBox>
 
