@@ -11,17 +11,14 @@ export default css.global`
     text-underline-offset: 0.125rem;
   }
 
-  ol,
-  ul {
-    margin: 0 1.5rem;
-  }
-
   ul {
     list-style: none;
+    list-style-position: inside;
   }
 
   ol {
     list-style: circled-numbers;
+    list-style-position: inside;
   }
 
   @counter-style circled-numbers {
