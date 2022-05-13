@@ -204,6 +204,7 @@ const Draft: NextPage = ({ data, query }: any) => {
         },
       });
       setBlocks(newBlocks);
+      e.dispatchEvent(new Event("InputEvent"));
     });
   };
 
@@ -230,6 +231,7 @@ const Draft: NextPage = ({ data, query }: any) => {
     });
     newBlocks[index].node.markdown = e.target.value;
     setBlocks(newBlocks);
+    handleTextareaHeight(e);
   };
 
   const deleteBlock = async (index: number) => {
@@ -320,7 +322,6 @@ const Draft: NextPage = ({ data, query }: any) => {
               </HoverItems>
 
               <StyledTextarea
-                ref={(e) => handleTextareaHeight(e)}
                 placeholder="Text"
                 spellCheck="false"
                 value={block.node.markdown}
