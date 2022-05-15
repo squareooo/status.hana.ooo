@@ -14,6 +14,7 @@ import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
 import { useCreateBlockMutation } from "@/lib/mutations/createBlock.graphql";
 import { useUpdateBlockMutation } from "@/lib/mutations/updateBlock.graphql";
 import { useDeleteBlockMutation } from "@/lib/mutations/deleteBlock.graphql";
+import { useUpdateTestMutation } from "@/lib/mutations/updateTest.graphql";
 import {
   CreatePresignedPostDocument,
   CreatePresignedPostMutationResult,
@@ -122,6 +123,7 @@ const Draft: NextPage = ({ data, query }: any) => {
   const [createBlockMutation] = useCreateBlockMutation();
   const [updateBlockMutation] = useUpdateBlockMutation();
   const [deleteBlockMutation] = useDeleteBlockMutation();
+  const [updateTestMutation] = useUpdateTestMutation();
   const [title, setTitle] = useState(data.test.name);
   const [blocks, setBlocks] = useState<any[]>([]);
 
@@ -209,6 +211,14 @@ const Draft: NextPage = ({ data, query }: any) => {
   };
 
   const handleTitleChange = (e: any) => {
+    updateTestMutation({
+      variables: {
+        input: {
+          id: testId,
+          name: e.target.value,
+        },
+      },
+    });
     setTitle(e.target.value as string);
   };
 
