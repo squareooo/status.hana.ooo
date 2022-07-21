@@ -1415,7 +1415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/cors@npm:^7.0.0":
+"@fastify/cors@npm:7.0.0, @fastify/cors@npm:^7.0.0":
   version: 7.0.0
   resolution: "@fastify/cors@npm:7.0.0"
   dependencies:
@@ -6411,6 +6411,7 @@ __metadata:
     "@commitlint/cli": ^16.2.3
     "@commitlint/config-conventional": ^16.2.1
     "@fastify/cookie": ^6.0.0
+    "@fastify/cors": 7.0.0
     "@graphql-tools/load-files": ^6.2.5
     "@graphql-tools/merge": ^6.2.7
     "@types/mime-types": ^2.1.1
