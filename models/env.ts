@@ -1,11 +1,9 @@
-import { Schema, Document } from 'mongoose'
+import { Schema } from "mongoose";
 
-import createConnection from '@/lib/createConnection'
+import createConnection from "@/lib/createConnection";
 
-const alice = createConnection('alice')
+const alice = createConnection("alice");
 
-interface Env extends Document {}
+const EnvSchema = new Schema();
 
-const EnvModel = new Schema<Env>({})
-
-export default alice.model<Env>('env', EnvModel)
+export default alice.model("env", EnvSchema) as any;

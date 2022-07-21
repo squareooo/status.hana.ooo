@@ -3117,6 +3117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bson@npm:^4.6.5":
+  version: 4.6.5
+  resolution: "bson@npm:4.6.5"
+  dependencies:
+    buffer: "npm:^5.6.0"
+  checksum: 243452a1a2667c8a112108974fd079323a42faa5c37661a5940fdf26214efb0cbee36f4d95780ed485e6badf1d5a046792b48113f6cc2ea9cae519eb623dda09
+  languageName: node
+  linkType: hard
+
 "buffer-equal-constant-time@npm:1.0.1":
   version: 1.0.1
   resolution: "buffer-equal-constant-time@npm:1.0.1"
@@ -7624,6 +7633,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mongodb@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "mongodb@npm:4.8.0"
+  dependencies:
+    bson: "npm:^4.6.5"
+    denque: "npm:^2.0.1"
+    mongodb-connection-string-url: "npm:^2.5.2"
+    saslprep: "npm:^1.0.3"
+    socks: "npm:^2.6.2"
+  dependenciesMeta:
+    saslprep:
+      optional: true
+  checksum: 022e9e97959fde028bc017dbb36a561c28ee1eb546a0e92d0af0c34ec8a78bcf1a7a651505e9850fcbf004025e25714227d6c4975af4db3b84610251a4d35227
+  languageName: node
+  linkType: hard
+
 "mongoose@npm:^6.3.1":
   version: 6.3.1
   resolution: "mongoose@npm:6.3.1"
@@ -9697,6 +9722,7 @@ __metadata:
     katex: "npm:^0.15.3"
     mdast: "npm:^3.0.0"
     mime-types: "npm:^2.1.35"
+    mongodb: "npm:^4.8.0"
     mongoose: "npm:^6.3.1"
     next: "npm:^12.1.5"
     react: "npm:17.0.2"
@@ -9720,6 +9746,7 @@ __metadata:
     unist-builder: "npm:^3.0.0"
     unist-util-remove-position: "npm:^4.0.1"
     unist-util-visit: "npm:^4.1.0"
+    uuid-mongodb: "npm:^2.5.1"
   languageName: unknown
   linkType: soft
 
@@ -10248,6 +10275,26 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 6a88ed8344d07f2324b304ee36def365d967953b5a9c15baa3213eb3909e86a7da1ee70a4c2133e80c23d6c1987590e9c3c57d874e20a124f9e41620b462fa57
+  languageName: node
+  linkType: hard
+
+"uuid-mongodb@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "uuid-mongodb@npm:2.5.1"
+  dependencies:
+    uuid: "npm:^8.3.2"
+  peerDependencies:
+    mongodb: 3.6.x || 3.7.x || 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x
+  checksum: 38685fb3025f1664e2f0e5368696bfbe76ffc7cf8fdfd777c72c76a19705f05d544419a8ae09a2f4cfd64139b1dc574df830b616437f3eed183e4f152948d3dd
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 236a12282c6fa32f326aa1b6d5699a843572e9ab7de84a1507a6b7c315fdcf55bf6ed333fd37d35c5c656f4cb96af998844e1c8cae281c442a1ec3b66df62962
   languageName: node
   linkType: hard
 

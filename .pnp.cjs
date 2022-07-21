@@ -72,6 +72,7 @@ const RAW_RUNTIME_STATE =
           ["katex", "npm:0.15.3"],\
           ["mdast", "npm:3.0.0"],\
           ["mime-types", "npm:2.1.35"],\
+          ["mongodb", "npm:4.8.0"],\
           ["mongoose", "npm:6.3.1"],\
           ["next", "virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:12.1.5"],\
           ["react", "npm:17.0.2"],\
@@ -94,7 +95,8 @@ const RAW_RUNTIME_STATE =
           ["unified", "npm:10.1.2"],\
           ["unist-builder", "npm:3.0.0"],\
           ["unist-util-remove-position", "npm:4.0.1"],\
-          ["unist-util-visit", "npm:4.1.0"]\
+          ["unist-util-visit", "npm:4.1.0"],\
+          ["uuid-mongodb", "virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:2.5.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4590,6 +4592,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/bson-npm-4.6.3-d40238b972-9.zip/node_modules/bson/",\
         "packageDependencies": [\
           ["bson", "npm:4.6.3"],\
+          ["buffer", "npm:5.7.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.6.5", {\
+        "packageLocation": "../../../.yarn/berry/cache/bson-npm-4.6.5-e3f9f5300c-9.zip/node_modules/bson/",\
+        "packageDependencies": [\
+          ["bson", "npm:4.6.5"],\
           ["buffer", "npm:5.7.1"]\
         ],\
         "linkType": "HARD"\
@@ -10012,6 +10022,18 @@ const RAW_RUNTIME_STATE =
           ["socks", "npm:2.6.2"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:4.8.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/mongodb-npm-4.8.0-0ecfccf81d-9.zip/node_modules/mongodb/",\
+        "packageDependencies": [\
+          ["mongodb", "npm:4.8.0"],\
+          ["bson", "npm:4.6.5"],\
+          ["denque", "npm:2.0.1"],\
+          ["mongodb-connection-string-url", "npm:2.5.2"],\
+          ["saslprep", "npm:1.0.3"],\
+          ["socks", "npm:2.6.2"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["mongodb-connection-string-url", [\
@@ -12367,6 +12389,7 @@ const RAW_RUNTIME_STATE =
           ["katex", "npm:0.15.3"],\
           ["mdast", "npm:3.0.0"],\
           ["mime-types", "npm:2.1.35"],\
+          ["mongodb", "npm:4.8.0"],\
           ["mongoose", "npm:6.3.1"],\
           ["next", "virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:12.1.5"],\
           ["react", "npm:17.0.2"],\
@@ -12389,7 +12412,8 @@ const RAW_RUNTIME_STATE =
           ["unified", "npm:10.1.2"],\
           ["unist-builder", "npm:3.0.0"],\
           ["unist-util-remove-position", "npm:4.0.1"],\
-          ["unist-util-visit", "npm:4.1.0"]\
+          ["unist-util-visit", "npm:4.1.0"],\
+          ["uuid-mongodb", "virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:2.5.1"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -13052,6 +13076,38 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/util-deprecate-npm-1.0.2-e3fe1a219c-9.zip/node_modules/util-deprecate/",\
         "packageDependencies": [\
           ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["uuid", [\
+      ["npm:8.3.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/uuid-npm-8.3.2-eca0baba53-9.zip/node_modules/uuid/",\
+        "packageDependencies": [\
+          ["uuid", "npm:8.3.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["uuid-mongodb", [\
+      ["npm:2.5.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/uuid-mongodb-npm-2.5.1-2e48377438-9.zip/node_modules/uuid-mongodb/",\
+        "packageDependencies": [\
+          ["uuid-mongodb", "npm:2.5.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:2.5.1", {\
+        "packageLocation": "./.yarn/__virtual__/uuid-mongodb-virtual-bd9726a620/4/.yarn/berry/cache/uuid-mongodb-npm-2.5.1-2e48377438-9.zip/node_modules/uuid-mongodb/",\
+        "packageDependencies": [\
+          ["uuid-mongodb", "virtual:fdfb5a4258eec25ec02d46f97210e5b5a4dbfd02d4dbc72b207da3abb62d2b369770330eb3172be6778c40e3296e5fe894ef69967c5d650c567df3f1c7803340#npm:2.5.1"],\
+          ["@types/mongodb", null],\
+          ["mongodb", "npm:4.8.0"],\
+          ["uuid", "npm:8.3.2"]\
+        ],\
+        "packagePeers": [\
+          "@types/mongodb",\
+          "mongodb"\
         ],\
         "linkType": "HARD"\
       }]\
