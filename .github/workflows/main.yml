@@ -8,21 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  CI:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@main
-
-      - name: Use Node.js
-        uses: actions/setup-node@main
-
-      - run: yarn
-
-      - run: yarn lint
-
   CD:
-    needs: CI
     if: ${{ !github.head_ref }}
     runs-on: ubuntu-latest
     steps:
