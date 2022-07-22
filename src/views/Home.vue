@@ -93,11 +93,11 @@ export default defineComponent({
       },
       services: [
         {
-          icon: "mdi-home-roof",
-          title: "Main",
+          icon: "mdi-post",
+          title: "Moment",
           status: "None",
           desc: "",
-          url: "https://x.hana.ooo/.well-known/apollo/server-health",
+          url: "https://x.moment.moe/.well-known/apollo/server-health",
         },
         {
           icon: "mdi-cube",
@@ -107,11 +107,18 @@ export default defineComponent({
           url: "https://xauth.hana.ooo/.well-known/apollo/server-health",
         },
         {
-          icon: "mdi-hammer-wrench",
+          icon: "mdi-code-braces-box",
           title: "Dev",
           status: "None",
           desc: "",
           url: "https://xdev.hana.ooo/.well-known/apollo/server-health",
+        },
+        {
+          icon: "mdi-ab-testing",
+          title: "Test",
+          status: "None",
+          desc: "",
+          url: "https://xtest.hana.ooo/.well-known/apollo/server-health",
         },
         {
           icon: "mdi-link-variant",
@@ -128,11 +135,18 @@ export default defineComponent({
           url: "https://xschool.hana.ooo/.well-known/apollo/server-health",
         },
         {
+          icon: "mdi-hammer-wrench",
+          title: "Alice",
+          status: "None",
+          desc: "",
+          url: "https://xalice.hana.ooo/.well-known/apollo/server-health",
+        },
+        {
           icon: "mdi-sd",
           title: "Archive",
           status: "None",
           desc: "",
-          url: "https://archive.hana.ooo/.well-known/server-health",
+          url: "https://archive.moment.moe/.well-known/server-health",
         },
       ],
     })
