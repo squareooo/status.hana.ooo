@@ -5232,13 +5232,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hamt_plus@npm:1.0.2":
-  version: 1.0.2
-  resolution: "hamt_plus@npm:1.0.2"
-  checksum: 61f3b3405cdbb76c0ada226379ae69ee4cd57fd3ad439236764b8d92edd4627cc0520e1dbf3e5658680485449f7bf14b9d4bcc36874ac0f2c42c015e465ba7b4
-  languageName: node
-  linkType: hard
-
 "hana.js@npm:^0.0.11":
   version: 0.0.11
   resolution: "hana.js@npm:0.0.11"
@@ -8579,22 +8572,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil@npm:^0.7.2":
-  version: 0.7.2
-  resolution: "recoil@npm:0.7.2"
-  dependencies:
-    hamt_plus: "npm:1.0.2"
-  peerDependencies:
-    react: ">=16.13.1"
-  peerDependenciesMeta:
-    react-dom:
-      optional: true
-    react-native:
-      optional: true
-  checksum: 1341c6dd5019260ec152f7f3511e2a59ee5a1cbd15e92037186b134322aa35bea36623cca396050a159c57e6286f479aa9eebfffb72ee8408df735ffa8ac9c67
-  languageName: node
-  linkType: hard
-
 "redent@npm:^3.0.0":
   version: 3.0.0
   resolution: "redent@npm:3.0.0"
@@ -9727,7 +9704,6 @@ __metadata:
     next: "npm:^12.1.5"
     react: "npm:17.0.2"
     react-dom: "npm:17.0.2"
-    recoil: "npm:^0.7.2"
     rehype-katex: "npm:^6.0.2"
     rehype-parse: "npm:^8.0.4"
     rehype-raw: "npm:^6.1.1"
@@ -9747,6 +9723,7 @@ __metadata:
     unist-util-remove-position: "npm:^4.0.1"
     unist-util-visit: "npm:^4.1.0"
     uuid-mongodb: "npm:^2.5.1"
+    zustand: "npm:^4.1.1"
   languageName: unknown
   linkType: soft
 
@@ -10262,6 +10239,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:1.2.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: bed3d1f68ca3dd33647035dbeb9d3a5ece12fced0245cb0fa831426192e52e4948b0fc6e9187d9d4dce9f58269af605f8feeeda100d2928f8b865f9cd9cc4a4a
+  languageName: node
+  linkType: hard
+
 "use-sync-external-store@npm:^1.0.0":
   version: 1.1.0
   resolution: "use-sync-external-store@npm:1.1.0"
@@ -10693,6 +10679,23 @@ __metadata:
   version: 0.8.15
   resolution: "zen-observable@npm:0.8.15"
   checksum: 82d09c1bb61fdaef03edb3b96f2af90ec9ddcdb35616df249f9d7aaef3aa4e061c7ab8733678b184639a914d47ba6f77741072c1d1ebea93dcd299d85fcf969d
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "zustand@npm:4.1.1"
+  dependencies:
+    use-sync-external-store: "npm:1.2.0"
+  peerDependencies:
+    immer: ">=9.0"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 64f24530fbb3adef8a7785e0d62c9b877c578ca3073d8b12888e2154c76485b9329e05144d4c88b3cef090b21e70a291168ae1e44a004c5fc2620da2adaca0c5
   languageName: node
   linkType: hard
 

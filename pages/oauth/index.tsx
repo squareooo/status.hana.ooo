@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
 
-import { cookieStorage } from "@/lib/cookieStorage";
+import cookieStorage from "@/lib/cookieStorage";
 import { useTokenMutation } from "@/lib/mutations/token.graphql";
 
 export default (() => {

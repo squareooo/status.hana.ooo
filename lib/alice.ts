@@ -2,12 +2,12 @@ import * as MUUID from 'uuid-mongodb'
 
 import Env from '@/models/env'
 
-export const init = async () => {
+export const init = async (): Promise<void> => {
   const keys = await Env.aggregate([
     {
       $match: {
         repositoryId: MUUID.from(process.env.ID as string),
-        name: process.env.ENV as string
+        name: process.env.ENV
       }
     },
     {

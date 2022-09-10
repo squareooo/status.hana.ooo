@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import { cookieStorage } from "@/lib/cookieStorage";
+import cookieStorage from "@/lib/cookieStorage";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined;
 

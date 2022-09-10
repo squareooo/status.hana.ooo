@@ -2,13 +2,12 @@ import type { NextPage } from "next";
 import Hana from "hana.js";
 import { useEffect } from "react";
 import Link from "next/link";
-import { useRecoilState } from "recoil";
 
 import { styled } from "@/lib/stitches.config";
-import { cookieStorage } from "@/lib/cookieStorage";
+import cookieStorage from "@/lib/cookieStorage";
 import Container from "@/components/atoms/Container";
 import Button from "@/components/atoms/Button";
-import accessTokenAtom from "@/recoil/accessToken";
+import { useStore } from "@/store";
 
 const StyledButton = styled(Button, {
   marginRight: "0.5rem",
@@ -31,11 +30,11 @@ const StyeldBox = styled("div", {
 });
 
 const AppBar: NextPage = () => {
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenAtom);
+  const { auth } = useStore();
 
   useEffect(() => {
-    setAccessToken(cookieStorage.getItem("access_token") ?? "");
-  }, [setAccessToken]);
+    auth.setAccessToken(cookieStorage.getItem("access_token") ?? "");
+  }, [auth.setAccessToken]);
 
   Hana.init({ clientId: process.env.NEXT_PUBLIC_CLIENT_ID as string });
 
@@ -46,7 +45,7 @@ const AppBar: NextPage = () => {
   };
 
   const signOut = () => {
-    setAccessToken("");
+    auth.setAccessToken("");
     cookieStorage.removeItem("access_token");
   };
 
@@ -66,9 +65,9 @@ const AppBar: NextPage = () => {
         </StyeldBox>
 
         <StyeldBox>
-          {accessToken && Actions()}
+          {auth.accessToken && Actions()}
 
-          {!accessToken && <StyledButton onClick={signIn}>로그인</StyledButton>}
+          {!auth.accessToken && <StyledButton onClick={signIn}>로그인</StyledButton>}
         </StyeldBox>
       </StyledHeader>
     </Container>
