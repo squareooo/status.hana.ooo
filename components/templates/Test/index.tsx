@@ -1,21 +1,22 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
-import "katex/dist/katex.min.css";
-import "katex/contrib/mhchem";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import remarkParse from "remark-parse";
+import { unified } from "unified";
 
-import renderStyles from "@/styles/render";
-import answers from "@/lib/unified/answers";
-import { TestQuery } from "@/lib/queries/test.graphql";
-import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
-import Container from "@/components/atoms/Container";
+// eslint-disable-next-line import/no-unresolved
+import "katex/contrib/mhchem";
+import "katex/dist/katex.min.css";
 import Block from "@/components/atoms/Block";
+import Container from "@/components/atoms/Container";
 import AppBar from "@/components/organisms/AppBar";
+import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
+import { TestQuery } from "@/lib/queries/test.graphql";
+import answers from "@/lib/unified/answers";
+import renderStyles from "@/styles/render";
 
 interface Props {
   data: TestQuery;

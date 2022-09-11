@@ -1,5 +1,6 @@
-import { createConnection } from 'mongoose'
 import { env } from 'process'
+
+import { createConnection } from 'mongoose'
 
 const CreateConnection = (name: string) => {
   interface URI {

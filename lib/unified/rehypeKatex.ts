@@ -1,11 +1,10 @@
-import { Plugin } from "unified";
 import { Root } from "hast";
-import katex, { KatexOptions } from "katex";
-import { visit } from "unist-util-visit";
-import { removePosition } from "unist-util-remove-position";
 import { toText } from "hast-util-to-text";
-import { unified } from "unified";
+import katex, { KatexOptions } from "katex";
 import rehypeParse from "rehype-parse";
+import { unified , Plugin } from "unified";
+import { removePosition } from "unist-util-remove-position";
+import { visit } from "unist-util-visit";
 
 const assign = Object.assign;
 

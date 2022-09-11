@@ -1,32 +1,32 @@
-import * as MUUID from 'uuid-mongodb'
+import * as MUUID from "uuid-mongodb";
 
-import Env from '@/models/env'
+import Env from "@/models/env";
 
 export const init = async (): Promise<void> => {
   const keys = await Env.aggregate([
     {
       $match: {
         repositoryId: MUUID.from(process.env.ID as string),
-        name: process.env.ENV
-      }
+        name: process.env.ENV,
+      },
     },
     {
       $lookup: {
-        from: 'keys',
-        localField: 'id',
-        foreignField: 'envId',
-        as: 'keys'
-      }
+        from: "keys",
+        localField: "id",
+        foreignField: "envId",
+        as: "keys",
+      },
     },
-    { $unwind: '$keys' },
+    { $unwind: "$keys" },
     {
       $replaceRoot: {
-        newRoot: '$keys'
-      }
-    }
-  ])
+        newRoot: "$keys",
+      },
+    },
+  ]);
 
   for await (const key of keys) {
-    Object.assign(process.env, { [key.name]: key.value })
+    Object.assign(process.env, { [key.name]: key.value });
   }
-}
+};

@@ -1,6 +1,5 @@
 import create from "zustand";
-import { persist } from "zustand/middleware";
-import { combine } from "zustand/middleware";
+import { persist , combine } from "zustand/middleware";
 
 import cookieStorage from "@/lib/cookieStorage";
 

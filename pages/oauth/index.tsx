@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { useEffect } from "react";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import cookieStorage from "@/lib/cookieStorage";
 import { useTokenMutation } from "@/lib/mutations/token.graphql";

@@ -1,12 +1,12 @@
 import { NextPage, GetServerSideProps } from "next";
 
+import Test from "@/components/templates/Test";
 import { initializeApollo } from "@/lib/apollo";
 import {
   TestDocument,
   TestQueryResult,
   TestQuery,
 } from "@/lib/queries/test.graphql";
-import Test from "@/components/templates/Test";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {

@@ -1,7 +1,6 @@
+import { styled } from "@stitches/react";
 import type { NextPage } from "next";
 import React from "react";
-
-import { styled } from "@stitches/react";
 
 const StyledContainer = styled("main", {
   width: "1024px",

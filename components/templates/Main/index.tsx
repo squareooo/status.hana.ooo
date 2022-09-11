@@ -1,10 +1,10 @@
+import { styled } from "@stitches/react";
 import type { NextPage } from "next";
 import React from "react";
 
-import { TestsQuery } from "@/lib/queries/tests.graphql";
-import AppBar from "@/components/organisms/AppBar";
 import Container from "@/components/atoms/Container";
-import { styled } from "@stitches/react";
+import AppBar from "@/components/organisms/AppBar";
+import { TestsQuery } from "@/lib/queries/tests.graphql";
 
 const Outlined = styled("div", {
   display: "flex",

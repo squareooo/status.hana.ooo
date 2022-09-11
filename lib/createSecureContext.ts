@@ -1,5 +1,5 @@
-import * as tls from 'tls'
 import { env } from 'process'
+import * as tls from 'tls'
 
 const createSecureContext = async (servername: string) => {
   return tls.createSecureContext({

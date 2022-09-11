@@ -1,7 +1,8 @@
 import * as http from 'http'
 import * as https from 'https'
-import { parse } from 'url'
 import { env } from 'process'
+import { parse } from 'url'
+
 import next from 'next'
 
 import { init } from '@/lib/alice'

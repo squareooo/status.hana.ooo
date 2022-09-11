@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
 import Hana from "hana.js";
-import { useEffect } from "react";
+import type { NextPage } from "next";
 import Link from "next/link";
+import { useEffect } from "react";
 
-import { styled } from "@/lib/stitches.config";
-import cookieStorage from "@/lib/cookieStorage";
-import Container from "@/components/atoms/Container";
 import Button from "@/components/atoms/Button";
+import Container from "@/components/atoms/Container";
+import cookieStorage from "@/lib/cookieStorage";
+import { styled } from "@/lib/stitches.config";
 import { useStore } from "@/store";
 
 const StyledButton = styled(Button, {
@@ -67,7 +67,9 @@ const AppBar: NextPage = () => {
         <StyeldBox>
           {auth.accessToken && Actions()}
 
-          {!auth.accessToken && <StyledButton onClick={signIn}>로그인</StyledButton>}
+          {!auth.accessToken && (
+            <StyledButton onClick={signIn}>로그인</StyledButton>
+          )}
         </StyeldBox>
       </StyledHeader>
     </Container>

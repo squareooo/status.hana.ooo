@@ -1,7 +1,7 @@
 import { h } from "hastscript";
-import { visit } from "unist-util-visit";
-import { Plugin } from "unified";
 import { Root } from "mdast";
+import { Plugin } from "unified";
+import { visit } from "unist-util-visit";
 
 const rehypeBox: Plugin<[], Root> = () => {
   return (tree: any) => {

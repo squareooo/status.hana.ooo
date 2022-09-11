@@ -1,6 +1,7 @@
-import { styled } from "@/lib/stitches.config";
 import type { NextPage } from "next";
 import { MouseEventHandler } from "react";
+
+import { styled } from "@/lib/stitches.config";
 
 const StyledButton = styled("button", {
   color: "white",
