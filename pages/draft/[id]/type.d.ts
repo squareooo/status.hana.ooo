@@ -1,4 +1,4 @@
-import { TestQueryResult } from "@/lib/queries/test.graphql";
+import { TestQueryResult } from "@/lib/queries/test.gql";
 
 export interface Props {
   data: TestQueryResult["data"];

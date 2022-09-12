@@ -4,7 +4,7 @@ import React from "react";
 
 import Container from "@/components/atoms/Container";
 import AppBar from "@/components/organisms/AppBar";
-import { TestsQuery } from "@/lib/queries/tests.graphql";
+import { TestsQuery } from "@/lib/queries/tests.gql";
 
 const Outlined = styled("div", {
   display: "flex",

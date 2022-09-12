@@ -41,5 +41,5 @@ yarn-error.log*
 
 # graphql-let
 .cache
-*.graphql.d.ts
+*.gql.d.ts
 __generated__

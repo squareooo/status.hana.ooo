@@ -6,7 +6,7 @@ import {
   TestDocument,
   TestQueryResult,
   TestQuery,
-} from "@/lib/queries/test.graphql";
+} from "@/lib/queries/test.gql";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {

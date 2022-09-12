@@ -2,7 +2,7 @@ schema:
   ${NEXT_PUBLIC_GRAPHQL_URI}:
     headers:
       authorization: Bearer ${TOKEN}
-documents: "**/*.graphql"
+documents: "**/*.gql"
 plugins:
   - typescript-operations
   - typescript-react-apollo

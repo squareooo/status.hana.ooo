@@ -13,8 +13,8 @@ import "katex/dist/katex.min.css";
 import Block from "@/components/atoms/Block";
 import Container from "@/components/atoms/Container";
 import AppBar from "@/components/organisms/AppBar";
-import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
-import { TestQuery } from "@/lib/queries/test.graphql";
+import { useBlocksQuery } from "@/lib/queries/blocks.gql";
+import { TestQuery } from "@/lib/queries/test.gql";
 import answers from "@/lib/unified/answers";
 import renderStyles from "@/styles/render";
 

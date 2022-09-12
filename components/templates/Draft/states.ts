@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Props } from "./type";
 
-import { useBlocksQuery } from "@/lib/queries/blocks.graphql";
+import { useBlocksQuery } from "@/lib/queries/blocks.gql";
 
 export const useStates = (props: Props) => {
   const testId = props.query.id;

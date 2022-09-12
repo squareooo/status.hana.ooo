@@ -4,15 +4,15 @@ import mime from "mime-types";
 import { States } from "./type";
 
 import { initializeApollo } from "@/lib/apollo";
-import { useCreateBlockMutation } from "@/lib/mutations/createBlock.graphql";
+import { useCreateBlockMutation } from "@/lib/mutations/createBlock.gql";
 import {
   CreatePresignedPostDocument,
   CreatePresignedPostMutationResult,
   CreatePresignedPostMutationVariables,
-} from "@/lib/mutations/createPresignedPost.graphql";
-import { useDeleteBlockMutation } from "@/lib/mutations/deleteBlock.graphql";
-import { useUpdateBlockMutation } from "@/lib/mutations/updateBlock.graphql";
-import { useUpdateTestMutation } from "@/lib/mutations/updateTest.graphql";
+} from "@/lib/mutations/createPresignedPost.gql";
+import { useDeleteBlockMutation } from "@/lib/mutations/deleteBlock.gql";
+import { useUpdateBlockMutation } from "@/lib/mutations/updateBlock.gql";
+import { useUpdateTestMutation } from "@/lib/mutations/updateTest.gql";
 
 export const useHandlers = (state: States) => {
   const testId = state.query.id;

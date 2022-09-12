@@ -4,7 +4,7 @@ import Router, { useRouter } from "next/router";
 import { useEffect } from "react";
 
 import cookieStorage from "@/lib/cookieStorage";
-import { useTokenMutation } from "@/lib/mutations/token.graphql";
+import { useTokenMutation } from "@/lib/mutations/token.gql";
 
 export default (() => {
   const router = useRouter();
