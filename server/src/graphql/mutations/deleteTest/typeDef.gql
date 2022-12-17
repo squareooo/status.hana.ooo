@@ -1,0 +1,15 @@
+extend type Mutation {
+  "시험 삭제"
+  deleteTest(input: DeleteTestInput!): DeleteTest!
+}
+
+input DeleteTestInput {
+  id: ID!
+}
+
+type DeleteTest {
+  id: ID!
+  userId: ID!
+  name: String!
+  publishedAt: DateTime
+}

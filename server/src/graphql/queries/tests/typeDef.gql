@@ -1,0 +1,36 @@
+extend type Query {
+  "시험"
+  tests(input: TestsInput!): Tests!
+}
+
+input TestsInput {
+  after: ID
+  before: ID
+  first: Int
+  last: Int
+}
+
+type Test {
+  id: ID!
+  userId: ID!
+  name: String!
+  publishedAt: DateTime
+}
+
+type TestEdge {
+  cursor: ID!
+  node: Test!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: ID
+  endCursor: ID
+}
+
+type Tests {
+  totalCount: Int
+  edges: [TestEdge]
+  pageInfo: PageInfo!
+}

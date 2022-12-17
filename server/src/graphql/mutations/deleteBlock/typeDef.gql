@@ -1,0 +1,16 @@
+extend type Mutation {
+  "블록 삭제"
+  deleteBlock(input: DeleteBlockInput!): DeleteBlock!
+}
+
+input DeleteBlockInput {
+  id: ID!
+}
+
+type DeleteBlock {
+  id: ID!
+  testId: ID!
+  userId: ID!
+  index: Int!
+  markdown: String!
+}

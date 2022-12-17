@@ -1,0 +1,18 @@
+extend type Mutation {
+  "시험 수정"
+  updateTest(input: UpdateTestInput!): UpdateTest!
+}
+
+input UpdateTestInput {
+  id: ID!
+  name: String
+  published: Boolean
+  publishedAt: DateTime
+}
+
+type UpdateTest {
+  id: ID!
+  userId: ID!
+  name: String!
+  publishedAt: DateTime
+}

@@ -1,0 +1,39 @@
+extend type Query {
+  "블록"
+  blocks(input: BlocksInput!): Blocks!
+}
+
+input BlocksInput {
+  "Test 고유 식별자"
+  testId: ID
+  after: ID
+  before: ID
+  first: Int
+  last: Int
+}
+
+type Block {
+  id: ID!
+  testId: ID!
+  userId: ID!
+  index: Int!
+  markdown: String!
+}
+
+type BlockEdge {
+  cursor: ID!
+  node: Block!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: ID
+  endCursor: ID
+}
+
+type Blocks {
+  totalCount: Int
+  edges: [BlockEdge!]
+  pageInfo: PageInfo!
+}

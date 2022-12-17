@@ -1,0 +1,18 @@
+extend type Mutation {
+  "블록 생성"
+  createBlock(input: CreateBlockInput!): CreateBlock!
+}
+
+input CreateBlockInput {
+  testId: ID!
+  index: Int!
+  markdown: String!
+}
+
+type CreateBlock {
+  id: ID!
+  testId: ID!
+  userId: ID!
+  index: Int!
+  markdown: String!
+}
