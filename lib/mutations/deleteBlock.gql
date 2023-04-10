@@ -1,0 +1,9 @@
+mutation deleteBlock($input: DeleteBlockInput!) {
+  deleteBlock(input: $input) {
+    id
+    testId
+    userId
+    index
+    markdown
+  }
+}

@@ -1,0 +1,13 @@
+query tests($input: TestsInput!) {
+  tests(input: $input) {
+    totalCount
+    edges {
+      cursor
+      node {
+        id
+        userId
+        name
+      }
+    }
+  }
+}

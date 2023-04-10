@@ -1,0 +1,9 @@
+mutation updateBlock($input: UpdateBlockInput!) {
+  updateBlock(input: $input) {
+    id
+    testId
+    userId
+    index
+    markdown
+  }
+}

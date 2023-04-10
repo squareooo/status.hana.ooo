@@ -1,0 +1,16 @@
+extend type Query {
+  "시험"
+  test(input: TestInput!): Test!
+}
+
+input TestInput {
+  "고유 식별자"
+  id: String!
+}
+
+type Test {
+  id: ID!
+  userId: ID!
+  name: String!
+  publishedAt: DateTime
+}

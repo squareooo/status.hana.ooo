@@ -1,0 +1,16 @@
+extend type Mutation {
+  "시리즈 생성"
+  createSeries(input: CreateSeriesInput!): CreateSeries!
+}
+
+input CreateSeriesInput {
+  name: String!
+  desc: String
+}
+
+type CreateSeries {
+  id: ID!
+  userId: ID!
+  name: String!
+  desc: String
+}

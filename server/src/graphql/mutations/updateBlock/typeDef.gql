@@ -1,0 +1,18 @@
+extend type Mutation {
+  "블록 수정"
+  updateBlock(input: UpdateBlockInput!): UpdateBlock!
+}
+
+input UpdateBlockInput {
+  id: ID!
+  index: Int
+  markdown: String
+}
+
+type UpdateBlock {
+  id: ID!
+  testId: ID!
+  userId: ID!
+  index: Int!
+  markdown: String!
+}

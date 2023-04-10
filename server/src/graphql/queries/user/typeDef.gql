@@ -1,0 +1,16 @@
+extend type Query {
+  "사용자"
+  user(input: UserInput!): User!
+}
+
+input UserInput {
+  "지정 식별자"
+  username: String!
+}
+
+type User {
+  id: String!
+  username: String!
+  name: String!
+  desc: String
+}

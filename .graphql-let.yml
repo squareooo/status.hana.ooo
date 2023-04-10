@@ -1,0 +1,10 @@
+schema:
+  ${NEXT_PUBLIC_GRAPHQL_URI}:
+    headers:
+      authorization: Bearer ${TOKEN}
+documents: "**/*.gql"
+plugins:
+  - typescript-operations
+  - typescript-react-apollo
+cacheDir: .cache
+typeInjectEntrypoint: graphql-let.d.ts

@@ -1,0 +1,16 @@
+extend type Query {
+  "시리즈"
+  aSeries(input: ASeriesInput!): Series!
+}
+
+input ASeriesInput {
+  "고유 식별자"
+  id: String!
+}
+
+type Series {
+  id: ID!
+  channelId: ID!
+  name: String!
+  desc: String
+}

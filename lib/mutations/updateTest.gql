@@ -1,0 +1,8 @@
+mutation updateTest($input: UpdateTestInput!) {
+  updateTest(input: $input) {
+    id
+    userId
+    name
+    publishedAt
+  }
+}

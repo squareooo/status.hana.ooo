@@ -1,0 +1,3 @@
+# graphql-let
+.cache
+*.gql.d.ts
