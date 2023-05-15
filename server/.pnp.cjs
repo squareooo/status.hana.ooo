@@ -54,7 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:2.26.0"],\
             ["eslint-plugin-node", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:11.1.0"],\
             ["eslint-plugin-promise", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:5.2.0"],\
-            ["fastify", "npm:3.29.0"],\
+            ["fastify", "npm:3.29.5"],\
             ["graphql", "npm:15.8.0"],\
             ["graphql-scalars", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:1.17.0"],\
             ["hana.js", "npm:0.0.11"],\
@@ -2706,7 +2706,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/graphql", null],\
             ["apollo-server-core", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:3.7.0"],\
             ["apollo-server-types", "virtual:af83ed208553f8b121c79a2a5f3ea9e19a94f18c440164053e2f8e74633ca74a8a210d3cb6ee40df4180f168afd6f981634d056081d323bbde2e6cd40514251e#npm:3.5.3"],\
-            ["fastify", "npm:3.29.0"],\
+            ["fastify", "npm:3.29.5"],\
             ["graphql", "npm:15.8.0"]\
           ],\
           "packagePeers": [\
@@ -4179,6 +4179,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["fast-content-type-parse", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/fast-content-type-parse-npm-1.0.0-08ad8e1d9f-9e9187be17.zip/node_modules/fast-content-type-parse/",\
+          "packageDependencies": [\
+            ["fast-content-type-parse", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fast-decode-uri-component", [\
         ["npm:1.0.1", {\
           "packageLocation": "./.yarn/cache/fast-decode-uri-component-npm-1.0.1-578ba9fecf-427a48fe09.zip/node_modules/fast-decode-uri-component/",\
@@ -4270,14 +4279,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["fastify", [\
-        ["npm:3.29.0", {\
-          "packageLocation": "./.yarn/cache/fastify-npm-3.29.0-233f7cd5ad-ed2964035e.zip/node_modules/fastify/",\
+        ["npm:3.29.5", {\
+          "packageLocation": "./.yarn/cache/fastify-npm-3.29.5-4daa5ccb41-6f97e67c25.zip/node_modules/fastify/",\
           "packageDependencies": [\
-            ["fastify", "npm:3.29.0"],\
+            ["fastify", "npm:3.29.5"],\
             ["@fastify/ajv-compiler", "npm:1.1.0"],\
             ["@fastify/error", "npm:2.0.0"],\
             ["abstract-logging", "npm:2.0.1"],\
             ["avvio", "npm:7.2.5"],\
+            ["fast-content-type-parse", "npm:1.0.0"],\
             ["fast-json-stringify", "npm:2.7.13"],\
             ["find-my-way", "npm:4.5.1"],\
             ["flatstr", "npm:1.0.12"],\
@@ -7715,7 +7725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:2.26.0"],\
             ["eslint-plugin-node", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:11.1.0"],\
             ["eslint-plugin-promise", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:5.2.0"],\
-            ["fastify", "npm:3.29.0"],\
+            ["fastify", "npm:3.29.5"],\
             ["graphql", "npm:15.8.0"],\
             ["graphql-scalars", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:1.17.0"],\
             ["hana.js", "npm:0.0.11"],\

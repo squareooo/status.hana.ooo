@@ -21,7 +21,7 @@
     "apollo-server-fastify": "^3.7.0",
     "apollo-server-plugin-base": "^3.5.3",
     "dotenv": "^8.2.0",
-    "fastify": "^3.29.0",
+    "fastify": "^3.29.4",
     "graphql": "^15.5.0",
     "graphql-scalars": "^1.14.1",
     "hana.js": "^0.0.11",
