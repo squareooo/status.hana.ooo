@@ -39,6 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# .turbo
+.turbo
+
 # graphql-let
 .cache
 *.gql.d.ts
