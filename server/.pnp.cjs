@@ -61,7 +61,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:7.0.4"],\
             ["mime-types", "npm:2.1.35"],\
             ["mongodb", "npm:4.5.0"],\
-            ["mongoose", "npm:6.3.2"],\
+            ["mongoose", "npm:6.11.1"],\
             ["ts-node", "virtual:bbe5bf3641371eedd9d68d33d8a3d307af69214b7ca2ee6a0bea014a3a03cf79525d964718531a4657321275bba4a874ab4d49dbaece79253bd717ffb31d3e27#npm:10.7.0"],\
             ["ts-node-dev", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:1.1.8"],\
             ["tsconfig-paths", "npm:3.14.1"],\
@@ -144,6 +144,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-crc32-npm-3.0.0-10d83e85b0-9fdb3e837f.zip/node_modules/@aws-crypto/crc32/",\
+          "packageDependencies": [\
+            ["@aws-crypto/crc32", "npm:3.0.0"],\
+            ["@aws-crypto/util", "npm:3.0.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@aws-crypto/crc32c", [\
@@ -163,6 +173,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@aws-crypto-ie11-detection-npm-2.0.0-bcdfe29fef-dd15daa116.zip/node_modules/@aws-crypto/ie11-detection/",\
           "packageDependencies": [\
             ["@aws-crypto/ie11-detection", "npm:2.0.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-ie11-detection-npm-3.0.0-71f24dcf6a-299b2ddd46.zip/node_modules/@aws-crypto/ie11-detection/",\
+          "packageDependencies": [\
+            ["@aws-crypto/ie11-detection", "npm:3.0.0"],\
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
@@ -198,6 +216,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-sha256-browser-npm-3.0.0-467f48a447-ca89456bf5.zip/node_modules/@aws-crypto/sha256-browser/",\
+          "packageDependencies": [\
+            ["@aws-crypto/sha256-browser", "npm:3.0.0"],\
+            ["@aws-crypto/ie11-detection", "npm:3.0.0"],\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-crypto/supports-web-crypto", "npm:3.0.0"],\
+            ["@aws-crypto/util", "npm:3.0.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-locate-window", "npm:3.55.0"],\
+            ["@aws-sdk/util-utf8-browser", "npm:3.55.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@aws-crypto/sha256-js", [\
@@ -220,6 +253,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-sha256-js-npm-3.0.0-2ba1013fd6-644ded32ea.zip/node_modules/@aws-crypto/sha256-js/",\
+          "packageDependencies": [\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-crypto/util", "npm:3.0.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@aws-crypto/supports-web-crypto", [\
@@ -227,6 +270,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@aws-crypto-supports-web-crypto-npm-2.0.0-fdaf09f063-77fad3813a.zip/node_modules/@aws-crypto/supports-web-crypto/",\
           "packageDependencies": [\
             ["@aws-crypto/supports-web-crypto", "npm:2.0.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-supports-web-crypto-npm-3.0.0-55222d294a-35479a1558.zip/node_modules/@aws-crypto/supports-web-crypto/",\
+          "packageDependencies": [\
+            ["@aws-crypto/supports-web-crypto", "npm:3.0.0"],\
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
@@ -242,9 +293,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/@aws-crypto-util-npm-3.0.0-6c4b38c78e-d29d554504.zip/node_modules/@aws-crypto/util/",\
+          "packageDependencies": [\
+            ["@aws-crypto/util", "npm:3.0.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-utf8-browser", "npm:3.55.0"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@aws-sdk/abort-controller", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-abort-controller-npm-3.342.0-7cd20f7457-5681ba5f94.zip/node_modules/@aws-sdk/abort-controller/",\
+          "packageDependencies": [\
+            ["@aws-sdk/abort-controller", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-abort-controller-npm-3.78.0-db52d8b0c5-b18ef361fd.zip/node_modules/@aws-sdk/abort-controller/",\
           "packageDependencies": [\
@@ -272,6 +342,51 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/chunked-blob-reader-native", "npm:3.58.0"],\
             ["@aws-sdk/util-base64-browser", "npm:3.58.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/client-cognito-identity", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-cognito-identity-npm-3.342.0-c250e75b2c-04709049c0.zip/node_modules/@aws-sdk/client-cognito-identity/",\
+          "packageDependencies": [\
+            ["@aws-sdk/client-cognito-identity", "npm:3.342.0"],\
+            ["@aws-crypto/sha256-browser", "npm:3.0.0"],\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-sdk/client-sts", "npm:3.342.0"],\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-node", "npm:3.342.0"],\
+            ["@aws-sdk/fetch-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/hash-node", "npm:3.342.0"],\
+            ["@aws-sdk/invalid-dependency", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-content-length", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-endpoint", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-host-header", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-logger", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-recursion-detection", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-retry", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-signing", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-user-agent", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/node-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/smithy-client", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-browser", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-node", "npm:3.310.0"],\
+            ["@aws-sdk/util-defaults-mode-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-defaults-mode-node", "npm:3.342.0"],\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-node", "virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["@smithy/protocol-http", "npm:1.0.1"],\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -339,6 +454,46 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/client-sso", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-sso-npm-3.342.0-be2d1dcabe-21a793e21d.zip/node_modules/@aws-sdk/client-sso/",\
+          "packageDependencies": [\
+            ["@aws-sdk/client-sso", "npm:3.342.0"],\
+            ["@aws-crypto/sha256-browser", "npm:3.0.0"],\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/fetch-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/hash-node", "npm:3.342.0"],\
+            ["@aws-sdk/invalid-dependency", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-content-length", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-endpoint", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-host-header", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-logger", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-recursion-detection", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-retry", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-user-agent", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/node-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/smithy-client", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-browser", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-node", "npm:3.310.0"],\
+            ["@aws-sdk/util-defaults-mode-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-defaults-mode-node", "npm:3.342.0"],\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-node", "virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["@smithy/protocol-http", "npm:1.0.1"],\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-client-sso-npm-3.85.0-1062a4c380-a21f51fc82.zip/node_modules/@aws-sdk/client-sso/",\
           "packageDependencies": [\
@@ -377,7 +532,93 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@aws-sdk/client-sso-oidc", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-sso-oidc-npm-3.342.0-ead49d3554-e55ce5f456.zip/node_modules/@aws-sdk/client-sso-oidc/",\
+          "packageDependencies": [\
+            ["@aws-sdk/client-sso-oidc", "npm:3.342.0"],\
+            ["@aws-crypto/sha256-browser", "npm:3.0.0"],\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/fetch-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/hash-node", "npm:3.342.0"],\
+            ["@aws-sdk/invalid-dependency", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-content-length", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-endpoint", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-host-header", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-logger", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-recursion-detection", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-retry", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-user-agent", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/node-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/smithy-client", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-browser", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-node", "npm:3.310.0"],\
+            ["@aws-sdk/util-defaults-mode-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-defaults-mode-node", "npm:3.342.0"],\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-node", "virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["@smithy/protocol-http", "npm:1.0.1"],\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@aws-sdk/client-sts", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-client-sts-npm-3.342.0-ccdc6f5bcc-8a36627a8e.zip/node_modules/@aws-sdk/client-sts/",\
+          "packageDependencies": [\
+            ["@aws-sdk/client-sts", "npm:3.342.0"],\
+            ["@aws-crypto/sha256-browser", "npm:3.0.0"],\
+            ["@aws-crypto/sha256-js", "npm:3.0.0"],\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-node", "npm:3.342.0"],\
+            ["@aws-sdk/fetch-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/hash-node", "npm:3.342.0"],\
+            ["@aws-sdk/invalid-dependency", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-content-length", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-endpoint", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-host-header", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-logger", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-recursion-detection", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-retry", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-sdk-sts", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-signing", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-user-agent", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/node-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/smithy-client", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-browser", "npm:3.310.0"],\
+            ["@aws-sdk/util-body-length-node", "npm:3.310.0"],\
+            ["@aws-sdk/util-defaults-mode-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-defaults-mode-node", "npm:3.342.0"],\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-browser", "npm:3.342.0"],\
+            ["@aws-sdk/util-user-agent-node", "virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["@smithy/protocol-http", "npm:1.0.1"],\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["fast-xml-parser", "npm:4.1.2"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-client-sts-npm-3.85.0-0326be7ec1-bd1c18da9c.zip/node_modules/@aws-sdk/client-sts/",\
           "packageDependencies": [\
@@ -422,6 +663,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/config-resolver", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-config-resolver-npm-3.342.0-e26ef459a6-61ac05c7e1.zip/node_modules/@aws-sdk/config-resolver/",\
+          "packageDependencies": [\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-config-provider", "npm:3.310.0"],\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-config-resolver-npm-3.80.0-7af6bcaa32-033457d9a7.zip/node_modules/@aws-sdk/config-resolver/",\
           "packageDependencies": [\
@@ -435,7 +687,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@aws-sdk/credential-provider-cognito-identity", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-cognito-identity-npm-3.342.0-d70dcd9d8c-125ceb028b.zip/node_modules/@aws-sdk/credential-provider-cognito-identity/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-cognito-identity", "npm:3.342.0"],\
+            ["@aws-sdk/client-cognito-identity", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@aws-sdk/credential-provider-env", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-env-npm-3.342.0-be06d46059-086bde1f53.zip/node_modules/@aws-sdk/credential-provider-env/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-env", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-env-npm-3.78.0-0330765f44-bf1ada71ee.zip/node_modules/@aws-sdk/credential-provider-env/",\
           "packageDependencies": [\
@@ -448,6 +723,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-imds", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-imds-npm-3.342.0-8d4fef6a87-ea6341c9c1.zip/node_modules/@aws-sdk/credential-provider-imds/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-imds", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.81.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-imds-npm-3.81.0-563bd2f153-46f6a41367.zip/node_modules/@aws-sdk/credential-provider-imds/",\
           "packageDependencies": [\
@@ -462,6 +749,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-ini", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-ini-npm-3.342.0-07eb48b0d6-7dfbbb45f6.zip/node_modules/@aws-sdk/credential-provider-ini/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-ini", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-env", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-imds", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-process", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-sso", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-web-identity", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-ini-npm-3.85.0-93149e6d7a-6e2d20c9dc.zip/node_modules/@aws-sdk/credential-provider-ini/",\
           "packageDependencies": [\
@@ -479,6 +782,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-node", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-node-npm-3.342.0-c2c35e314b-225b905e45.zip/node_modules/@aws-sdk/credential-provider-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-node", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-env", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-imds", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-ini", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-process", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-sso", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-web-identity", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-node-npm-3.85.0-56c4da4a0c-5a0f847bb3.zip/node_modules/@aws-sdk/credential-provider-node/",\
           "packageDependencies": [\
@@ -498,6 +818,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-process", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-process-npm-3.342.0-78f1a885e7-87936656e9.zip/node_modules/@aws-sdk/credential-provider-process/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-process", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-process-npm-3.80.0-344941dbff-28c748a85c.zip/node_modules/@aws-sdk/credential-provider-process/",\
           "packageDependencies": [\
@@ -511,6 +842,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-sso", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-sso-npm-3.342.0-7fd27a0dfa-01604f7de9.zip/node_modules/@aws-sdk/credential-provider-sso/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-sso", "npm:3.342.0"],\
+            ["@aws-sdk/client-sso", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/token-providers", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-sso-npm-3.85.0-07cc246832-08ceb75854.zip/node_modules/@aws-sdk/credential-provider-sso/",\
           "packageDependencies": [\
@@ -525,6 +869,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/credential-provider-web-identity", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-web-identity-npm-3.342.0-a6febeebb2-19de3af2ee.zip/node_modules/@aws-sdk/credential-provider-web-identity/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-provider-web-identity", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-credential-provider-web-identity-npm-3.78.0-91fb894f98-2cf3796848.zip/node_modules/@aws-sdk/credential-provider-web-identity/",\
           "packageDependencies": [\
@@ -532,6 +886,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/property-provider", "npm:3.78.0"],\
             ["@aws-sdk/types", "npm:3.78.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/credential-providers", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-credential-providers-npm-3.342.0-adca0b6141-5be3274359.zip/node_modules/@aws-sdk/credential-providers/",\
+          "packageDependencies": [\
+            ["@aws-sdk/credential-providers", "npm:3.342.0"],\
+            ["@aws-sdk/client-cognito-identity", "npm:3.342.0"],\
+            ["@aws-sdk/client-sso", "npm:3.342.0"],\
+            ["@aws-sdk/client-sts", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-cognito-identity", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-env", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-imds", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-ini", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-node", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-process", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-sso", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-web-identity", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/eventstream-codec", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-eventstream-codec-npm-3.342.0-599f1c19f8-2922d430c6.zip/node_modules/@aws-sdk/eventstream-codec/",\
+          "packageDependencies": [\
+            ["@aws-sdk/eventstream-codec", "npm:3.342.0"],\
+            ["@aws-crypto/crc32", "npm:3.0.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-hex-encoding", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -599,6 +989,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/fetch-http-handler", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-fetch-http-handler-npm-3.342.0-4a4e467fec-da02fd9ff1.zip/node_modules/@aws-sdk/fetch-http-handler/",\
+          "packageDependencies": [\
+            ["@aws-sdk/fetch-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/querystring-builder", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-fetch-http-handler-npm-3.78.0-702a6a49c9-47065e9d20.zip/node_modules/@aws-sdk/fetch-http-handler/",\
           "packageDependencies": [\
@@ -626,6 +1028,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/hash-node", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-hash-node-npm-3.342.0-9dc83dff11-08295dc8ad.zip/node_modules/@aws-sdk/hash-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/hash-node", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-buffer-from", "npm:3.310.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-hash-node-npm-3.78.0-0dd1c8d2bf-09d163cab7.zip/node_modules/@aws-sdk/hash-node/",\
           "packageDependencies": [\
@@ -649,6 +1062,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/invalid-dependency", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-invalid-dependency-npm-3.342.0-39864c708e-58694fa950.zip/node_modules/@aws-sdk/invalid-dependency/",\
+          "packageDependencies": [\
+            ["@aws-sdk/invalid-dependency", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-invalid-dependency-npm-3.78.0-dd83e8540b-7336a5dd7a.zip/node_modules/@aws-sdk/invalid-dependency/",\
           "packageDependencies": [\
@@ -660,6 +1082,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/is-array-buffer", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-is-array-buffer-npm-3.310.0-1a5a04a172-ddd1536ad1.zip/node_modules/@aws-sdk/is-array-buffer/",\
+          "packageDependencies": [\
+            ["@aws-sdk/is-array-buffer", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-is-array-buffer-npm-3.55.0-85c9fb777b-527481f024.zip/node_modules/@aws-sdk/is-array-buffer/",\
           "packageDependencies": [\
@@ -697,6 +1127,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-content-length", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-content-length-npm-3.342.0-56f02d1875-397d211c64.zip/node_modules/@aws-sdk/middleware-content-length/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-content-length", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-content-length-npm-3.78.0-e4271c773b-2c9a3cc638.zip/node_modules/@aws-sdk/middleware-content-length/",\
           "packageDependencies": [\
@@ -704,6 +1144,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/protocol-http", "npm:3.78.0"],\
             ["@aws-sdk/types", "npm:3.78.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/middleware-endpoint", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-endpoint-npm-3.342.0-0e31647f55-10bd600494.zip/node_modules/@aws-sdk/middleware-endpoint/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-endpoint", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -749,6 +1203,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-host-header", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-host-header-npm-3.342.0-b4c3ff14b2-eb26b492a2.zip/node_modules/@aws-sdk/middleware-host-header/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-host-header", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-host-header-npm-3.78.0-79ba57356a-a6af38fe6f.zip/node_modules/@aws-sdk/middleware-host-header/",\
           "packageDependencies": [\
@@ -772,6 +1236,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-logger", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-logger-npm-3.342.0-df42508fd6-bada093581.zip/node_modules/@aws-sdk/middleware-logger/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-logger", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-logger-npm-3.78.0-d32de94582-4652b1f333.zip/node_modules/@aws-sdk/middleware-logger/",\
           "packageDependencies": [\
@@ -782,7 +1255,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@aws-sdk/middleware-recursion-detection", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-recursion-detection-npm-3.342.0-c62ee6ac40-4871056c3a.zip/node_modules/@aws-sdk/middleware-recursion-detection/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-recursion-detection", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@aws-sdk/middleware-retry", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-retry-npm-3.342.0-d5517fccfd-066268ccab.zip/node_modules/@aws-sdk/middleware-retry/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-retry", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/service-error-classification", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"],\
+            ["uuid", "npm:8.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-retry-npm-3.80.0-320b143e8e-e48aa11775.zip/node_modules/@aws-sdk/middleware-retry/",\
           "packageDependencies": [\
@@ -811,6 +1310,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-sdk-sts", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-sdk-sts-npm-3.342.0-8a277a2a67-404e122a0d.zip/node_modules/@aws-sdk/middleware-sdk-sts/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-sdk-sts", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-signing", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-sdk-sts-npm-3.78.0-fd87cc2358-77615f25c7.zip/node_modules/@aws-sdk/middleware-sdk-sts/",\
           "packageDependencies": [\
@@ -826,6 +1335,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-serde", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-serde-npm-3.342.0-639212e00d-10bff04ba1.zip/node_modules/@aws-sdk/middleware-serde/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-serde", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-serde-npm-3.78.0-2135380e0d-bf7a55e33e.zip/node_modules/@aws-sdk/middleware-serde/",\
           "packageDependencies": [\
@@ -837,6 +1355,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-signing", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-signing-npm-3.342.0-e6a817dad1-d07d718331.zip/node_modules/@aws-sdk/middleware-signing/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-signing", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/signature-v4", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-signing-npm-3.78.0-5670138555-50b7501623.zip/node_modules/@aws-sdk/middleware-signing/",\
           "packageDependencies": [\
@@ -862,6 +1393,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-stack", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-stack-npm-3.342.0-c0157485e2-8cd077f7e6.zip/node_modules/@aws-sdk/middleware-stack/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-stack-npm-3.78.0-390bace667-7a0bf10bfa.zip/node_modules/@aws-sdk/middleware-stack/",\
           "packageDependencies": [\
@@ -872,6 +1411,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/middleware-user-agent", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-middleware-user-agent-npm-3.342.0-f097e2f310-77aa441068.zip/node_modules/@aws-sdk/middleware-user-agent/",\
+          "packageDependencies": [\
+            ["@aws-sdk/middleware-user-agent", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-middleware-user-agent-npm-3.78.0-c16596d96d-fda841d0d2.zip/node_modules/@aws-sdk/middleware-user-agent/",\
           "packageDependencies": [\
@@ -884,6 +1434,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/node-config-provider", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-node-config-provider-npm-3.342.0-926e20a014-b52f42d898.zip/node_modules/@aws-sdk/node-config-provider/",\
+          "packageDependencies": [\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-node-config-provider-npm-3.80.0-3be12485a7-c8097a6bca.zip/node_modules/@aws-sdk/node-config-provider/",\
           "packageDependencies": [\
@@ -897,6 +1458,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/node-http-handler", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-node-http-handler-npm-3.342.0-fb790820b0-2eadb61095.zip/node_modules/@aws-sdk/node-http-handler/",\
+          "packageDependencies": [\
+            ["@aws-sdk/node-http-handler", "npm:3.342.0"],\
+            ["@aws-sdk/abort-controller", "npm:3.342.0"],\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/querystring-builder", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.82.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-node-http-handler-npm-3.82.0-85d3848424-2404fb945c.zip/node_modules/@aws-sdk/node-http-handler/",\
           "packageDependencies": [\
@@ -911,6 +1484,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/property-provider", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-property-provider-npm-3.342.0-023018a9c0-22a1d5f188.zip/node_modules/@aws-sdk/property-provider/",\
+          "packageDependencies": [\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-property-provider-npm-3.78.0-c909bd315a-1fe5b01190.zip/node_modules/@aws-sdk/property-provider/",\
           "packageDependencies": [\
@@ -922,6 +1504,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/protocol-http", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-protocol-http-npm-3.342.0-a8ea022684-f6910fa488.zip/node_modules/@aws-sdk/protocol-http/",\
+          "packageDependencies": [\
+            ["@aws-sdk/protocol-http", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-protocol-http-npm-3.78.0-c0f9b3f5b6-e2b7089e78.zip/node_modules/@aws-sdk/protocol-http/",\
           "packageDependencies": [\
@@ -933,6 +1524,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/querystring-builder", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-querystring-builder-npm-3.342.0-8d56a52973-801e5b4230.zip/node_modules/@aws-sdk/querystring-builder/",\
+          "packageDependencies": [\
+            ["@aws-sdk/querystring-builder", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-uri-escape", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-querystring-builder-npm-3.78.0-3b8ac25e1d-69a0de40aa.zip/node_modules/@aws-sdk/querystring-builder/",\
           "packageDependencies": [\
@@ -945,6 +1546,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/querystring-parser", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-querystring-parser-npm-3.342.0-5463bc8cc6-248b5b855e.zip/node_modules/@aws-sdk/querystring-parser/",\
+          "packageDependencies": [\
+            ["@aws-sdk/querystring-parser", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-querystring-parser-npm-3.78.0-06e0a0ae5b-214d75ebb7.zip/node_modules/@aws-sdk/querystring-parser/",\
           "packageDependencies": [\
@@ -970,6 +1580,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/service-error-classification", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-service-error-classification-npm-3.342.0-4bb5c4998b-c7cf32ac7e.zip/node_modules/@aws-sdk/service-error-classification/",\
+          "packageDependencies": [\
+            ["@aws-sdk/service-error-classification", "npm:3.342.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-service-error-classification-npm-3.78.0-51fed7684e-6693d6de05.zip/node_modules/@aws-sdk/service-error-classification/",\
           "packageDependencies": [\
@@ -979,6 +1596,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/shared-ini-file-loader", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-shared-ini-file-loader-npm-3.342.0-2715e0fd8d-252c1f2f75.zip/node_modules/@aws-sdk/shared-ini-file-loader/",\
+          "packageDependencies": [\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-shared-ini-file-loader-npm-3.80.0-8ab12138eb-64d39659dd.zip/node_modules/@aws-sdk/shared-ini-file-loader/",\
           "packageDependencies": [\
@@ -989,6 +1615,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/signature-v4", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-signature-v4-npm-3.342.0-5a4105c487-ab251dc6ad.zip/node_modules/@aws-sdk/signature-v4/",\
+          "packageDependencies": [\
+            ["@aws-sdk/signature-v4", "npm:3.342.0"],\
+            ["@aws-sdk/eventstream-codec", "npm:3.342.0"],\
+            ["@aws-sdk/is-array-buffer", "npm:3.310.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@aws-sdk/util-hex-encoding", "npm:3.310.0"],\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["@aws-sdk/util-uri-escape", "npm:3.310.0"],\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-signature-v4-npm-3.78.0-95a9a7ea64-fc1bca1012.zip/node_modules/@aws-sdk/signature-v4/",\
           "packageDependencies": [\
@@ -1031,6 +1672,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/smithy-client", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-smithy-client-npm-3.342.0-0fae178127-af79f4ec9b.zip/node_modules/@aws-sdk/smithy-client/",\
+          "packageDependencies": [\
+            ["@aws-sdk/smithy-client", "npm:3.342.0"],\
+            ["@aws-sdk/middleware-stack", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-smithy-client-npm-3.85.0-5ab174c16c-51b319ab7a.zip/node_modules/@aws-sdk/smithy-client/",\
           "packageDependencies": [\
@@ -1042,7 +1693,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@aws-sdk/token-providers", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-token-providers-npm-3.342.0-fc5052268f-5b2715fc83.zip/node_modules/@aws-sdk/token-providers/",\
+          "packageDependencies": [\
+            ["@aws-sdk/token-providers", "npm:3.342.0"],\
+            ["@aws-sdk/client-sso-oidc", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/shared-ini-file-loader", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@aws-sdk/types", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-types-npm-3.342.0-9a22255552-c9ec087330.zip/node_modules/@aws-sdk/types/",\
+          "packageDependencies": [\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-types-npm-3.78.0-57fd338992-dd69607fb6.zip/node_modules/@aws-sdk/types/",\
           "packageDependencies": [\
@@ -1052,6 +1725,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/url-parser", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-url-parser-npm-3.342.0-4a5ceacadc-d5c1b23cc3.zip/node_modules/@aws-sdk/url-parser/",\
+          "packageDependencies": [\
+            ["@aws-sdk/url-parser", "npm:3.342.0"],\
+            ["@aws-sdk/querystring-parser", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-url-parser-npm-3.78.0-4a6fad2e76-dc564e4575.zip/node_modules/@aws-sdk/url-parser/",\
           "packageDependencies": [\
@@ -1069,6 +1752,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@aws-sdk/util-arn-parser", "npm:3.55.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/util-base64", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-base64-npm-3.310.0-bd7dc86865-3c9f7c8184.zip/node_modules/@aws-sdk/util-base64/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-base64", "npm:3.310.0"],\
+            ["@aws-sdk/util-buffer-from", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1095,6 +1789,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-body-length-browser", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-body-length-browser-npm-3.310.0-32f77bd9c6-c26136521c.zip/node_modules/@aws-sdk/util-body-length-browser/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-body-length-browser", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-body-length-browser-npm-3.55.0-f7bcfb4836-f10c9e1f05.zip/node_modules/@aws-sdk/util-body-length-browser/",\
           "packageDependencies": [\
@@ -1105,6 +1807,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-body-length-node", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-body-length-node-npm-3.310.0-dff3170f3a-202417ece7.zip/node_modules/@aws-sdk/util-body-length-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-body-length-node", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-body-length-node-npm-3.55.0-7d20afe062-35ae66271b.zip/node_modules/@aws-sdk/util-body-length-node/",\
           "packageDependencies": [\
@@ -1115,6 +1825,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-buffer-from", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-buffer-from-npm-3.310.0-c31752fc9c-9c3bd9c066.zip/node_modules/@aws-sdk/util-buffer-from/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-buffer-from", "npm:3.310.0"],\
+            ["@aws-sdk/is-array-buffer", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-buffer-from-npm-3.55.0-87a643f095-0c1d72cf23.zip/node_modules/@aws-sdk/util-buffer-from/",\
           "packageDependencies": [\
@@ -1126,6 +1845,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-config-provider", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-config-provider-npm-3.310.0-15877c83d4-958efc58ee.zip/node_modules/@aws-sdk/util-config-provider/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-config-provider", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-config-provider-npm-3.55.0-77fbc3118b-d7597e5929.zip/node_modules/@aws-sdk/util-config-provider/",\
           "packageDependencies": [\
@@ -1136,6 +1863,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-defaults-mode-browser", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-defaults-mode-browser-npm-3.342.0-21b1a48f56-96ff972331.zip/node_modules/@aws-sdk/util-defaults-mode-browser/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-defaults-mode-browser", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["bowser", "npm:2.11.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-defaults-mode-browser-npm-3.85.0-f74d70f0d2-f0d13c834f.zip/node_modules/@aws-sdk/util-defaults-mode-browser/",\
           "packageDependencies": [\
@@ -1149,6 +1887,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-defaults-mode-node", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-defaults-mode-node-npm-3.342.0-32a006daa1-b255d8039e.zip/node_modules/@aws-sdk/util-defaults-mode-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-defaults-mode-node", "npm:3.342.0"],\
+            ["@aws-sdk/config-resolver", "npm:3.342.0"],\
+            ["@aws-sdk/credential-provider-imds", "npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/property-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.85.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-defaults-mode-node-npm-3.85.0-8aa6de5061-2cfa6fc639.zip/node_modules/@aws-sdk/util-defaults-mode-node/",\
           "packageDependencies": [\
@@ -1159,6 +1910,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/property-provider", "npm:3.78.0"],\
             ["@aws-sdk/types", "npm:3.78.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/util-endpoints", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-endpoints-npm-3.342.0-4f4386f7a0-eb9443651d.zip/node_modules/@aws-sdk/util-endpoints/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-endpoints", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1176,6 +1938,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-hex-encoding", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-hex-encoding-npm-3.310.0-aef31b4def-97b8d7e0e4.zip/node_modules/@aws-sdk/util-hex-encoding/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-hex-encoding", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.58.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-hex-encoding-npm-3.58.0-81f0fb78b7-b0e210a963.zip/node_modules/@aws-sdk/util-hex-encoding/",\
           "packageDependencies": [\
@@ -1196,11 +1966,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-middleware", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-middleware-npm-3.342.0-82315fe65e-b668e04eff.zip/node_modules/@aws-sdk/util-middleware/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-middleware", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-middleware-npm-3.78.0-5f6550b416-7056449ec9.zip/node_modules/@aws-sdk/util-middleware/",\
           "packageDependencies": [\
             ["@aws-sdk/util-middleware", "npm:3.78.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/util-retry", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-retry-npm-3.342.0-969adc3ffe-89f730fcf8.zip/node_modules/@aws-sdk/util-retry/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-retry", "npm:3.342.0"],\
+            ["@aws-sdk/service-error-classification", "npm:3.342.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1228,6 +2017,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-uri-escape", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-uri-escape-npm-3.310.0-c20e335602-614c0a43b2.zip/node_modules/@aws-sdk/util-uri-escape/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-uri-escape", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.55.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-uri-escape-npm-3.55.0-fbadd42105-fad6780856.zip/node_modules/@aws-sdk/util-uri-escape/",\
           "packageDependencies": [\
@@ -1238,6 +2035,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-user-agent-browser", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-user-agent-browser-npm-3.342.0-7ce482acc1-43c11beac7.zip/node_modules/@aws-sdk/util-user-agent-browser/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-user-agent-browser", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["bowser", "npm:2.11.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:3.78.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-user-agent-browser-npm-3.78.0-6acce7962d-b5e18b4be1.zip/node_modules/@aws-sdk/util-user-agent-browser/",\
           "packageDependencies": [\
@@ -1250,6 +2057,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@aws-sdk/util-user-agent-node", [\
+        ["npm:3.342.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-user-agent-node-npm-3.342.0-de2b4e3eb1-2b0e170252.zip/node_modules/@aws-sdk/util-user-agent-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-user-agent-node", "npm:3.342.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["npm:3.80.0", {\
           "packageLocation": "./.yarn/cache/@aws-sdk-util-user-agent-node-npm-3.80.0-6c48513152-d1acc576fb.zip/node_modules/@aws-sdk/util-user-agent-node/",\
           "packageDependencies": [\
@@ -1257,6 +2071,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@aws-sdk/node-config-provider", "npm:3.80.0"],\
             ["@aws-sdk/types", "npm:3.78.0"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0", {\
+          "packageLocation": "./.yarn/__virtual__/@aws-sdk-util-user-agent-node-virtual-2ee983303c/0/cache/@aws-sdk-util-user-agent-node-npm-3.342.0-de2b4e3eb1-2b0e170252.zip/node_modules/@aws-sdk/util-user-agent-node/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-user-agent-node", "virtual:be2d1dcabe55972b52a042ce47afb71a23121250d688902c36244c1e8d388457ad5dfd9f2934390858a8dbf8233f8ba876e709e631dbbbb6b5cf5e923473581b#npm:3.342.0"],\
+            ["@aws-sdk/node-config-provider", "npm:3.342.0"],\
+            ["@aws-sdk/types", "npm:3.342.0"],\
+            ["@types/aws-crt", null],\
+            ["aws-crt", null],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/aws-crt",\
+            "aws-crt"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@aws-sdk/util-utf8", [\
+        ["npm:3.310.0", {\
+          "packageLocation": "./.yarn/cache/@aws-sdk-util-utf8-npm-3.310.0-f1575cc359-4045e79b8e.zip/node_modules/@aws-sdk/util-utf8/",\
+          "packageDependencies": [\
+            ["@aws-sdk/util-utf8", "npm:3.310.0"],\
+            ["@aws-sdk/util-buffer-from", "npm:3.310.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1986,6 +2827,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@protobufjs-utf8-npm-1.1.0-02c590807c-f9bf3163d1.zip/node_modules/@protobufjs/utf8/",\
           "packageDependencies": [\
             ["@protobufjs/utf8", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@smithy/protocol-http", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/@smithy-protocol-http-npm-1.0.1-7acb4f139f-ba9ac4880f.zip/node_modules/@smithy/protocol-http/",\
+          "packageDependencies": [\
+            ["@smithy/protocol-http", "npm:1.0.1"],\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["tslib", "npm:2.5.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@smithy/types", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/@smithy-types-npm-1.0.0-79a6ff2b27-ec05163564.zip/node_modules/@smithy/types/",\
+          "packageDependencies": [\
+            ["@smithy/types", "npm:1.0.0"],\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2989,6 +3851,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/bson-npm-4.6.3-d40238b972-da99222fc1.zip/node_modules/bson/",\
           "packageDependencies": [\
             ["bson", "npm:4.6.3"],\
+            ["buffer", "npm:5.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.7.2", {\
+          "packageLocation": "./.yarn/cache/bson-npm-4.7.2-77a08a4d01-f357d12c56.zip/node_modules/bson/",\
+          "packageDependencies": [\
+            ["bson", "npm:4.7.2"],\
             ["buffer", "npm:5.7.1"]\
           ],\
           "linkType": "HARD"\
@@ -4267,6 +5137,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fast-xml-parser", "npm:3.19.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.1.2", {\
+          "packageLocation": "./.yarn/cache/fast-xml-parser-npm-4.1.2-7e73f9df6d-6a7d1b1705.zip/node_modules/fast-xml-parser/",\
+          "packageDependencies": [\
+            ["fast-xml-parser", "npm:4.1.2"],\
+            ["strnum", "npm:1.0.5"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["fastify", [\
@@ -5027,6 +5905,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ip", "npm:1.1.5"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/ip-npm-2.0.0-204facb3cc-cfcfac6b87.zip/node_modules/ip/",\
+          "packageDependencies": [\
+            ["ip", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["ipaddr.js", [\
@@ -5363,10 +6248,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["kareem", [\
-        ["npm:2.3.5", {\
-          "packageLocation": "./.yarn/cache/kareem-npm-2.3.5-ce11fa6c90-eb1b996937.zip/node_modules/kareem/",\
+        ["npm:2.5.1", {\
+          "packageLocation": "./.yarn/cache/kareem-npm-2.5.1-79134fb43e-b019a960a7.zip/node_modules/kareem/",\
           "packageDependencies": [\
-            ["kareem", "npm:2.3.5"]\
+            ["kareem", "npm:2.5.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5779,6 +6664,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongodb", [\
+        ["npm:4.16.0", {\
+          "packageLocation": "./.yarn/cache/mongodb-npm-4.16.0-f6d128b4ab-f0b1347739.zip/node_modules/mongodb/",\
+          "packageDependencies": [\
+            ["mongodb", "npm:4.16.0"],\
+            ["@aws-sdk/credential-providers", "npm:3.342.0"],\
+            ["bson", "npm:4.7.2"],\
+            ["mongodb-connection-string-url", "npm:2.6.0"],\
+            ["saslprep", "npm:1.0.3"],\
+            ["socks", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:4.5.0", {\
           "packageLocation": "./.yarn/cache/mongodb-npm-4.5.0-a0f17b822d-423974a663.zip/node_modules/mongodb/",\
           "packageDependencies": [\
@@ -5801,20 +6698,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["whatwg-url", "npm:11.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:2.6.0", {\
+          "packageLocation": "./.yarn/cache/mongodb-connection-string-url-npm-2.6.0-af011ba17f-1d662f0ecf.zip/node_modules/mongodb-connection-string-url/",\
+          "packageDependencies": [\
+            ["mongodb-connection-string-url", "npm:2.6.0"],\
+            ["@types/whatwg-url", "npm:8.2.1"],\
+            ["whatwg-url", "npm:11.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["mongoose", [\
-        ["npm:6.3.2", {\
-          "packageLocation": "./.yarn/cache/mongoose-npm-6.3.2-0d6d25da5d-dcd4819f01.zip/node_modules/mongoose/",\
+        ["npm:6.11.1", {\
+          "packageLocation": "./.yarn/cache/mongoose-npm-6.11.1-bc92508819-6868905ee9.zip/node_modules/mongoose/",\
           "packageDependencies": [\
-            ["mongoose", "npm:6.3.2"],\
-            ["bson", "npm:4.6.3"],\
-            ["kareem", "npm:2.3.5"],\
-            ["mongodb", "npm:4.5.0"],\
+            ["mongoose", "npm:6.11.1"],\
+            ["bson", "npm:4.7.2"],\
+            ["kareem", "npm:2.5.1"],\
+            ["mongodb", "npm:4.16.0"],\
             ["mpath", "npm:0.9.0"],\
-            ["mquery", "npm:4.0.2"],\
+            ["mquery", "npm:4.0.3"],\
             ["ms", "npm:2.1.3"],\
-            ["sift", "npm:16.0.0"]\
+            ["sift", "npm:16.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5829,10 +6735,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mquery", [\
-        ["npm:4.0.2", {\
-          "packageLocation": "./.yarn/cache/mquery-npm-4.0.2-72896d581b-39ac308294.zip/node_modules/mquery/",\
+        ["npm:4.0.3", {\
+          "packageLocation": "./.yarn/cache/mquery-npm-4.0.3-993368e4d5-16a6887ba7.zip/node_modules/mquery/",\
           "packageDependencies": [\
-            ["mquery", "npm:4.0.2"],\
+            ["mquery", "npm:4.0.3"],\
             ["debug", "virtual:ee1bbcab87c0701d4ea83dd18afa59b10c6343191c17b3a8e7844ecdde3ca8e8977791131460b822baae289e9261b3b228709bc45987d850e69091b4d363edfa#npm:4.3.4"]\
           ],\
           "linkType": "HARD"\
@@ -6732,10 +7638,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["sift", [\
-        ["npm:16.0.0", {\
-          "packageLocation": "./.yarn/cache/sift-npm-16.0.0-c5d447b898-88d5754afe.zip/node_modules/sift/",\
+        ["npm:16.0.1", {\
+          "packageLocation": "./.yarn/cache/sift-npm-16.0.1-ad548f4923-5fe18a517a.zip/node_modules/sift/",\
           "packageDependencies": [\
-            ["sift", "npm:16.0.0"]\
+            ["sift", "npm:16.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6785,6 +7691,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["socks", "npm:2.6.2"],\
             ["ip", "npm:1.1.5"],\
+            ["smart-buffer", "npm:4.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.7.1", {\
+          "packageLocation": "./.yarn/cache/socks-npm-2.7.1-17f2b53052-259d9e3e8e.zip/node_modules/socks/",\
+          "packageDependencies": [\
+            ["socks", "npm:2.7.1"],\
+            ["ip", "npm:2.0.0"],\
             ["smart-buffer", "npm:4.2.0"]\
           ],\
           "linkType": "HARD"\
@@ -7017,6 +7932,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/strip-json-comments-npm-3.1.1-dcb2324823-492f73e272.zip/node_modules/strip-json-comments/",\
           "packageDependencies": [\
             ["strip-json-comments", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["strnum", [\
+        ["npm:1.0.5", {\
+          "packageLocation": "./.yarn/cache/strnum-npm-1.0.5-9ba11d2a0a-651b2031db.zip/node_modules/strnum/",\
+          "packageDependencies": [\
+            ["strnum", "npm:1.0.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7320,6 +8244,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tslib-npm-2.4.0-9cb6dc5030-8c4aa6a3c5.zip/node_modules/tslib/",\
           "packageDependencies": [\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.5.2", {\
+          "packageLocation": "./.yarn/cache/tslib-npm-2.5.2-3f1b58afbb-4d3c1e238b.zip/node_modules/tslib/",\
+          "packageDependencies": [\
+            ["tslib", "npm:2.5.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7722,7 +8653,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:7.0.4"],\
             ["mime-types", "npm:2.1.35"],\
             ["mongodb", "npm:4.5.0"],\
-            ["mongoose", "npm:6.3.2"],\
+            ["mongoose", "npm:6.11.1"],\
             ["ts-node", "virtual:bbe5bf3641371eedd9d68d33d8a3d307af69214b7ca2ee6a0bea014a3a03cf79525d964718531a4657321275bba4a874ab4d49dbaece79253bd717ffb31d3e27#npm:10.7.0"],\
             ["ts-node-dev", "virtual:8a1e5223d34dc6b324456a455b8684873b8a9a0a1b7012762f5fbd37d7ec28b8b7422aafc1e152de1d1a5ce09f01359e1f79e00dc4111abd0a6b526c245421be#npm:1.1.8"],\
             ["tsconfig-paths", "npm:3.14.1"],\
