@@ -1,7 +1,5 @@
 import create from "zustand";
-import { persist , combine } from "zustand/middleware";
-
-import cookieStorage from "@/lib/cookieStorage";
+import { persist, combine } from "zustand/middleware";
 
 export const useAuthStore = create(
   persist(
@@ -10,7 +8,6 @@ export const useAuthStore = create(
     })),
     {
       name: "auth",
-      getStorage: () => cookieStorage,
     }
   )
 );
